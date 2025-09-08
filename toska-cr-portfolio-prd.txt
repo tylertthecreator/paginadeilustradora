@@ -1,0 +1,138 @@
+<context>
+# Overview  
+Toska CR is an artist specializing in ceramics and handmade bags. This portfolio website will serve as a digital gallery showcasing her creative work and connecting visitors to her Etsy store. The site needs to reflect the handmade, artisanal nature of her brand while providing a professional platform for potential customers and collaborators to discover her work.
+
+# Core Features  
+- **Gallery Display**: Organized portfolio showcasing ceramics and handmade bags in an elegant grid layout
+- **Animated Photo Grid**: Eye-catching 4x4 square photo animation similar to In Good Hands website
+- **External Store Integration**: Seamless connection to Etsy store for purchases
+- **Contact System**: Both contact form and direct contact information for inquiries
+- **Social Media Integration**: Instagram and LinkedIn links with branded icons
+- **Mobile-First Design**: Responsive design optimized for all screen sizes
+- **Navigation**: Playful, artistic navigation inspired by Laura Lhuillier's design
+
+# User Experience  
+- **Primary Users**: Art collectors, potential customers, gallery owners, collaborators
+- **User Journey**: Landing → Browse work → Learn about artist → Contact/Purchase
+- **Visual Style**: Warm, earthy color palette inspired by Instagram post with handmade aesthetic
+- **Navigation Flow**: About Me → My Work → Shop → Contact with smooth transitions
+- **Image Viewing**: Lightbox functionality for detailed artwork viewing
+</context>
+<PRD>
+# Technical Architecture  
+## Frontend Framework: Next.js with React
+- **Technology**: Next.js 14+ with TypeScript for type safety
+- **Styling**: Tailwind CSS for rapid styling and responsive design
+- **Image Optimization**: Next.js Image component for performance
+- **Animations**: Framer Motion for smooth photo grid animations
+- **Icons**: React Icons for social media and UI elements
+
+## Component Structure
+- **Layout Components**: Header with navigation, Footer with social links
+- **Gallery Components**: Animated photo grid, individual image modals
+- **Form Components**: Contact form with validation
+- **UI Components**: Buttons, cards, navigation menu
+
+## Data Management
+- **Static Content**: JSON files for artwork metadata and content
+- **Image Storage**: Public folder with optimized images (4x5 for gallery, 4x4 for animation grid)
+- **Content Management**: Simple file-based system for easy updates
+
+## External Integrations
+- **Etsy Store**: External link integration
+- **Social Media**: Instagram and LinkedIn direct links
+- **Contact Form**: EmailJS or similar service for form submissions
+
+# Development Roadmap  
+## Phase 1: Foundation & Layout (MVP)
+- Set up Next.js project with TypeScript and Tailwind CSS
+- Create basic responsive layout with header and footer
+- Implement navigation menu with mobile hamburger menu
+- Set up routing for all four main pages (About, My Work, Shop, Contact)
+- Basic styling with warm, earthy color palette
+
+## Phase 2: Content Pages
+- **About Me Page**: Placeholder content area with editable text sections
+- **Contact Page**: Contact form with validation + contact information display
+- **Shop Page**: Simple page with prominent Etsy store link and featured work
+- Add social media icons (Instagram, LinkedIn) to footer
+
+## Phase 3: Gallery & Animation Features  
+- **My Work Page**: Main gallery with 4x5 image grid layout
+- Implement category filtering for different art types (ceramics, bags, etc.)
+- Create animated 4x4 photo grid component (moving/rotating effect)
+- Add image lightbox/modal for detailed viewing
+- Optimize all images for web performance
+
+## Phase 4: Polish & Performance
+- Add smooth page transitions and hover effects
+- Implement SEO optimization (meta tags, structured data)
+- Performance optimization and lighthouse audit
+- Cross-browser testing and mobile optimization refinements
+- Content loading states and error handling
+
+# Logical Dependency Chain
+1. **Project Setup** → Basic Next.js environment with dependencies
+2. **Layout Foundation** → Header, footer, navigation before any pages
+3. **Routing & Basic Pages** → Page structure before complex features
+4. **Static Content** → About and Contact pages (simpler) before gallery
+5. **Gallery System** → Image display before animations
+6. **Animation Features** → Advanced photo grid effects last
+7. **Performance & SEO** → Optimization after core functionality works
+
+# Risks and Mitigations  
+## Technical Challenges
+- **Learning Curve**: Next.js/React for developer with HTML/CSS/JS background
+  - *Mitigation*: Start with simple components, extensive documentation and tutorials
+- **Image Optimization**: Large portfolio images affecting performance  
+  - *Mitigation*: Use Next.js Image component, WebP format, proper sizing
+- **Animation Performance**: Complex photo grid animations on mobile
+  - *Mitigation*: Use CSS transforms, reduced motion preferences, fallbacks
+
+## Content Management
+- **Easy Updates**: Artist needs to update content without technical knowledge
+  - *Mitigation*: Document simple file editing process, consider headless CMS later
+- **Image Management**: Organizing and displaying large numbers of artwork images
+  - *Mitigation*: Clear folder structure, naming conventions, automated optimization
+
+## Deployment & Maintenance
+- **Domain Setup**: Connecting custom domain to hosting
+  - *Mitigation*: Clear documentation, Vercel's domain management tools
+- **Future Scalability**: Adding new features or content types
+  - *Mitigation*: Modular component structure, clear code organization
+
+# Appendix  
+## Color Palette (from Instagram inspiration)
+- Warm terracotta/clay tones
+- Soft creams and off-whites  
+- Muted earth browns
+- Accent colors from ceramic glazes
+
+## Typography
+- Clean, readable fonts that complement handmade aesthetic
+- Font pairing: Modern sans-serif for headings, readable serif for body text
+
+## Image Specifications
+- **Gallery Images**: 4x5 aspect ratio, max 1200px width
+- **Animation Grid**: 4x4 square format, 600px max width
+- **Formats**: WebP with JPEG fallbacks
+- **Quality**: High quality for art showcase, optimized for web
+
+## Content Structure
+```
+/about - Artist bio and story (editable placeholder)
+/work - Main gallery with category filters  
+/shop - Etsy integration and featured pieces
+/contact - Form + direct contact info
+```
+
+## External Links
+- Etsy store: Prominent call-to-action buttons
+- Instagram: Footer icon linking to profile
+- LinkedIn: Professional networking link in footer
+
+## Performance Targets
+- Lighthouse score: 90+ across all metrics
+- Mobile-first responsive design
+- Load time under 3 seconds on 3G networks
+</PRD>

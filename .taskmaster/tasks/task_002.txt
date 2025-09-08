@@ -1,0 +1,43 @@
+# Task ID: 2
+# Title: Implement Basic Site Layout and Navigation
+# Status: todo
+# Dependencies: 1
+# Priority: high
+# Description: Create the main responsive layout, including the header, footer, and the primary navigation menu, ensuring it's optimized for mobile devices.
+# Details:
+Build a `Header` component with a playful, artistic navigation menu inspired by Laura Lhuillier's design. Implement a `Footer` component with placeholders for social media links. Ensure the layout is responsive and includes a mobile hamburger menu. Apply the warm, earthy color palette to the base layout.
+
+# Test Strategy:
+Check that the header and footer are present on all pages. Test the navigation on desktop and mobile viewports, ensuring the hamburger menu functions correctly. Verify the color palette is applied.
+
+# Subtasks:
+## 1. Configure Tailwind CSS with Color Palette and Global Styles [pending]
+### Dependencies: None
+### Description: Define the project's warm, earthy color palette within `tailwind.config.ts`. Then, apply the base background color and default typography styles to the application in `styles/globals.css` to ensure a consistent theme.
+### Details:
+Locate `tailwind.config.ts` and extend the `theme.colors` object with the specified palette (e.g., terracotta, beige, olive). In `styles/globals.css`, set the `background-color` on the `body` or root element and define base font styles.
+
+## 2. Create Basic Header and Footer Components [pending]
+### Dependencies: 2.1
+### Description: Create placeholder `Header` and `Footer` components and integrate them into the main application layout file to establish the basic page structure.
+### Details:
+Create two new files: `components/Header.tsx` and `components/Footer.tsx`. Implement basic functional components that render `<header>` and `<footer>` elements respectively. Import and place these components in `app/layout.tsx` so they wrap the `{children}` prop.
+
+## 3. Implement Desktop Navigation Menu in Header [pending]
+### Dependencies: 2.2
+### Description: Build the primary navigation for desktop screen sizes within the `Header` component, featuring a playful, artistic design inspired by the reference.
+### Details:
+In `components/Header.tsx`, add a `<nav>` element. Use Next.js `<Link>` components for the navigation items ('Home', 'My Work', 'About'). Style the navigation using Tailwind CSS, focusing on typography, spacing, and colors for viewports larger than `md`.
+
+## 4. Implement Mobile Hamburger Menu and Drawer [pending]
+### Dependencies: 2.3
+### Description: Create a responsive hamburger menu for mobile devices that toggles a navigation drawer or overlay.
+### Details:
+In `components/Header.tsx`, add a button with a hamburger icon that is only visible on mobile viewports (e.g., using `md:hidden`). Use the `useState` hook to manage the open/closed state of the menu. Create a full-screen overlay or side-drawer component that contains the navigation links and becomes visible when the state is 'open'.
+
+## 5. Style Footer with Social Media Placeholders [pending]
+### Dependencies: 2.2
+### Description: Style the `Footer` component and add placeholder text or icons for social media links and copyright information.
+### Details:
+In `components/Footer.tsx`, add elements for copyright text and a list of social media links (e.g., 'Instagram', 'Pinterest'). Apply styling using the project's color palette and typography to ensure it is visually consistent with the header and overall theme.
+

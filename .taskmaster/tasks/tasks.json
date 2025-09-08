@@ -1,0 +1,287 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Initialize Next.js Project with Core Dependencies",
+        "description": "Set up the foundational Next.js project environment, including TypeScript for type safety and Tailwind CSS for styling, as outlined in Phase 1 of the development roadmap.",
+        "details": "Create a new Next.js 14+ project using `create-next-app`. Configure it to use TypeScript. Install and configure Tailwind CSS for utility-first styling. Install Framer Motion and React Icons as additional dependencies.",
+        "testStrategy": "Verify that the Next.js development server runs without errors. Confirm that Tailwind CSS utility classes can be applied to a basic component and are rendered correctly in the browser.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Scaffold Next.js Project with TypeScript",
+            "description": "Use the `create-next-app` CLI tool to generate a new Next.js 14+ project, ensuring TypeScript is selected during the setup process.",
+            "dependencies": [],
+            "details": "Execute `npx create-next-app@latest` and follow the interactive prompts. Ensure you select 'Yes' for using TypeScript and the App Router.",
+            "status": "done",
+            "testStrategy": "Run the development server (`npm run dev`) and confirm the default Next.js welcome page loads at `http://localhost:3000` without any console errors."
+          },
+          {
+            "id": 2,
+            "title": "Install and Configure Tailwind CSS",
+            "description": "Integrate the Tailwind CSS framework into the project for utility-first styling, following the official integration guide for Next.js.",
+            "dependencies": [],
+            "details": "Install `tailwindcss`, `postcss`, and `autoprefixer`. Run `npx tailwindcss init -p` to generate `tailwind.config.ts` and `postcss.config.js`. Update the `content` property in `tailwind.config.ts` and add the `@tailwind` directives to `app/globals.css`.",
+            "status": "done",
+            "testStrategy": "Modify `app/page.tsx` to include an element with a Tailwind class (e.g., `className=\"bg-blue-500\"`) and verify the style is correctly applied in the browser."
+          },
+          {
+            "id": 3,
+            "title": "Install Additional Dependencies (Framer Motion & React Icons)",
+            "description": "Add Framer Motion for animations and React Icons for the icon library to the project's dependencies.",
+            "dependencies": [],
+            "details": "Run the command `npm install framer-motion react-icons` in the project's root directory.",
+            "status": "done",
+            "testStrategy": "Check the `package.json` file to confirm that `framer-motion` and `react-icons` are listed under the `dependencies` section."
+          },
+          {
+            "id": 4,
+            "title": "Clean Up Boilerplate and Structure Project",
+            "description": "Remove the default Next.js example content from the main page and establish a basic folder structure for future development.",
+            "dependencies": [],
+            "details": "Clear the default JSX from `app/page.tsx` and replace it with a simple placeholder (e.g., an `<h1>`). Create a `components` directory inside the `app` or root directory to house future reusable components.",
+            "status": "done",
+            "testStrategy": "Verify that the browser displays only the simple placeholder content, not the default Next.js welcome page. Confirm the `components` directory exists in the file system."
+          },
+          {
+            "id": 5,
+            "title": "Initialize Git and Create First Commit",
+            "description": "Establish version control for the new project by initializing a Git repository and making an initial commit of the configured setup.",
+            "dependencies": [],
+            "details": "Ensure a `.gitignore` file is present and correctly configured. Stage all project files (`git add .`) and create the first commit with a descriptive message like 'feat: Initialize Next.js project with core dependencies'.",
+            "status": "done",
+            "testStrategy": "Run `git status` to confirm a clean working directory. Run `git log -1` to verify the initial commit exists with the correct files."
+          },
+          {
+            "id": 6,
+            "title": "Create Next.js Project with TypeScript and App Router",
+            "description": "Use the `create-next-app` command-line tool to generate a new Next.js 14+ project. Ensure that TypeScript, ESLint, and the App Router are selected during the setup process.",
+            "dependencies": [],
+            "details": "Run `npx create-next-app@latest` and follow the prompts to configure the project. Select 'Yes' for TypeScript, ESLint, Tailwind CSS, and the `src/` directory. Select 'Yes' for App Router.",
+            "status": "done",
+            "testStrategy": "After creation, run `npm run dev` to ensure the default Next.js application starts without any errors."
+          },
+          {
+            "id": 7,
+            "title": "Finalize Tailwind CSS Configuration",
+            "description": "Although `create-next-app` provides a basic setup, review and finalize the Tailwind CSS configuration to ensure it's ready for project-specific customizations.",
+            "dependencies": [],
+            "details": "Verify that `tailwind.config.ts` and `postcss.config.js` were created correctly. Confirm that the `content` array in `tailwind.config.ts` correctly points to `./src/**/*.{js,ts,jsx,tsx,mdx}`. Ensure the `@tailwind` directives are present at the top of `src/styles/globals.css`.",
+            "status": "done",
+            "testStrategy": "Check that the `tailwind.config.ts` and `src/styles/globals.css` files contain the expected configuration and directives as per the official Next.js with Tailwind CSS documentation."
+          },
+          {
+            "id": 8,
+            "title": "Clean Up Default Boilerplate Code and Styles",
+            "description": "Remove the default example content and styles from the home page (`page.tsx`) and the global stylesheet (`globals.css`) to provide a clean slate for development.",
+            "dependencies": [],
+            "details": "Delete all content within the `<main>` tag in `src/app/page.tsx` and replace it with a simple `<h1>` tag. Remove all CSS rules from `src/styles/globals.css` except for the three `@tailwind` directives at the top of the file.",
+            "status": "done",
+            "testStrategy": "Run the development server and verify that the home page displays only the simple `<h1>` tag on a plain white background, indicating that all default styles have been removed."
+          },
+          {
+            "id": 9,
+            "title": "Install Framer Motion and React Icons",
+            "description": "Add Framer Motion for animations and React Icons for the icon library to the project's dependencies, as they are required for future components.",
+            "dependencies": [],
+            "details": "Execute `npm install framer-motion react-icons` in the project's root directory to add the two libraries. Verify that they have been added to the `dependencies` section in the `package.json` file.",
+            "status": "done",
+            "testStrategy": "Check the `package.json` file to confirm that `framer-motion` and `react-icons` are listed as dependencies with valid version numbers."
+          },
+          {
+            "id": 10,
+            "title": "Verify Integration of All Core Dependencies",
+            "description": "Create a temporary test case on the home page to confirm that Tailwind CSS, Framer Motion, and React Icons are all functioning correctly within the Next.js environment.",
+            "dependencies": [],
+            "details": "Modify `src/app/page.tsx` to import `motion` from `framer-motion` and an icon (e.g., `FaReact`) from `react-icons/fa`. Render a `<motion.div>` with a simple animation, apply a Tailwind utility class (e.g., `text-blue-500 text-4xl`), and include the imported icon inside it.",
+            "status": "done",
+            "testStrategy": "Start the development server and view the home page. Confirm that the React icon is displayed, it has the blue color and larger size from Tailwind, and the `motion.div` performs its animation. Check the browser console for any errors."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Implement Basic Site Layout and Navigation",
+        "description": "Create the main responsive layout, including the header, footer, and the primary navigation menu, ensuring it's optimized for mobile devices.",
+        "details": "Build a `Header` component with a playful, artistic navigation menu inspired by Laura Lhuillier's design. Implement a `Footer` component with placeholders for social media links. Ensure the layout is responsive and includes a mobile hamburger menu. Apply the warm, earthy color palette to the base layout.",
+        "testStrategy": "Check that the header and footer are present on all pages. Test the navigation on desktop and mobile viewports, ensuring the hamburger menu functions correctly. Verify the color palette is applied.",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Configure Tailwind CSS with Color Palette and Global Styles",
+            "description": "Define the project's warm, earthy color palette within `tailwind.config.ts`. Then, apply the base background color and default typography styles to the application in `styles/globals.css` to ensure a consistent theme.",
+            "dependencies": [],
+            "details": "Locate `tailwind.config.ts` and extend the `theme.colors` object with the specified palette (e.g., terracotta, beige, olive). In `styles/globals.css`, set the `background-color` on the `body` or root element and define base font styles.",
+            "status": "done",
+            "testStrategy": "Verify that the background color of the application changes. Use browser dev tools to inspect elements and confirm that the new color palette is available as Tailwind utility classes."
+          },
+          {
+            "id": 2,
+            "title": "Create Basic Header and Footer Components",
+            "description": "Create placeholder `Header` and `Footer` components and integrate them into the main application layout file to establish the basic page structure.",
+            "dependencies": [
+              "2.1"
+            ],
+            "details": "Create two new files: `components/Header.tsx` and `components/Footer.tsx`. Implement basic functional components that render `<header>` and `<footer>` elements respectively. Import and place these components in `app/layout.tsx` so they wrap the `{children}` prop.",
+            "status": "done",
+            "testStrategy": "Run the development server and confirm that the text from the Header and Footer components appears on all pages (e.g., the home page and the `/work` page)."
+          },
+          {
+            "id": 3,
+            "title": "Implement Desktop Navigation Menu in Header",
+            "description": "Build the primary navigation for desktop screen sizes within the `Header` component, featuring a playful, artistic design inspired by the reference.",
+            "dependencies": [
+              "2.2"
+            ],
+            "details": "In `components/Header.tsx`, add a `<nav>` element. Use Next.js `<Link>` components for the navigation items ('Home', 'My Work', 'About'). Style the navigation using Tailwind CSS, focusing on typography, spacing, and colors for viewports larger than `md`.",
+            "status": "done",
+            "testStrategy": "View the site on a desktop resolution. Check that all navigation links are visible, correctly styled, and navigate to the correct pages. Ensure the navigation is not visible in this format on mobile."
+          },
+          {
+            "id": 4,
+            "title": "Implement Mobile Hamburger Menu and Drawer",
+            "description": "Create a responsive hamburger menu for mobile devices that toggles a navigation drawer or overlay.",
+            "dependencies": [
+              "2.3"
+            ],
+            "details": "In `components/Header.tsx`, add a button with a hamburger icon that is only visible on mobile viewports (e.g., using `md:hidden`). Use the `useState` hook to manage the open/closed state of the menu. Create a full-screen overlay or side-drawer component that contains the navigation links and becomes visible when the state is 'open'.",
+            "status": "done",
+            "testStrategy": "Switch to a mobile viewport in browser dev tools. Verify the desktop navigation is hidden and the hamburger icon is visible. Click the icon to test that the mobile menu opens and closes correctly. Test the links within the mobile menu."
+          },
+          {
+            "id": 5,
+            "title": "Style Footer with Social Media Placeholders",
+            "description": "Style the `Footer` component and add placeholder text or icons for social media links and copyright information.",
+            "dependencies": [
+              "2.2"
+            ],
+            "details": "In `components/Footer.tsx`, add elements for copyright text and a list of social media links (e.g., 'Instagram', 'Pinterest'). Apply styling using the project's color palette and typography to ensure it is visually consistent with the header and overall theme.",
+            "status": "done",
+            "testStrategy": "Inspect the footer on both desktop and mobile viewports to ensure it is responsive and styled correctly. Verify the placeholder text is present."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Set Up Page Routing and Static Content Pages",
+        "description": "Configure the application's routing and create the initial static pages for 'About Me' and 'Shop' as per the content structure.",
+        "details": "Use Next.js App Router to set up routes for `/`, `/about`, `/work`, `/shop`, and `/contact`. Create the 'About Me' page with placeholder text sections. Build the 'Shop' page featuring a prominent button/link to the external Etsy store.",
+        "testStrategy": "Navigate to each of the defined routes (`/about`, `/shop`, etc.) to ensure they render the correct page component. Confirm the Etsy link on the shop page is correct and functional.",
+        "priority": "high",
+        "dependencies": [
+          2
+        ],
+        "status": "todo",
+        "subtasks": []
+      },
+      {
+        "id": 4,
+        "title": "Develop Contact Page with Form and Social Links",
+        "description": "Build the contact page with a functional form for inquiries and add social media links to the site's footer.",
+        "details": "Create a `Contact` page component that includes a form with fields for name, email, and message. Implement form validation. Integrate a service like EmailJS for form submissions. Add Instagram and LinkedIn icons (using React Icons) with direct links to the footer.",
+        "testStrategy": "Test the contact form validation by submitting with empty/invalid fields. Send a test submission and verify it is received via the EmailJS service. Click the social media icons in the footer to confirm they link to the correct profiles.",
+        "priority": "medium",
+        "dependencies": [
+          2
+        ],
+        "status": "todo",
+        "subtasks": []
+      },
+      {
+        "id": 5,
+        "title": "Define and Implement Data Structure for Artwork",
+        "description": "Create a simple, file-based data management system using JSON files to store metadata for all artwork.",
+        "details": "Create a `data` directory to hold JSON files. Define a schema for artwork metadata (e.g., id, title, description, category, imageSrc). Populate a JSON file with sample data for both ceramics and bags. Organize corresponding images in the `/public` folder.",
+        "testStrategy": "Validate the JSON file structure against the defined schema. Write a simple script or component to read and log the JSON data to the console to ensure it's parseable and correct.",
+        "priority": "medium",
+        "dependencies": [
+          1
+        ],
+        "status": "todo",
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "Build 'My Work' Gallery Grid",
+        "description": "Implement the main gallery on the 'My Work' page, displaying artwork from the JSON data source in a responsive 4x5 grid.",
+        "details": "On the `/work` page, fetch artwork data from the JSON file. Dynamically render the images in a responsive grid layout, maintaining a 4x5 aspect ratio. Use the Next.js `Image` component for automatic optimization.",
+        "testStrategy": "Verify that all artwork from the JSON file is displayed on the page. Check that the grid is responsive and adapts to different screen sizes. Use browser developer tools to confirm that images are being served as optimized formats (e.g., WebP) by the Next.js Image component.",
+        "priority": "high",
+        "dependencies": [
+          3,
+          5
+        ],
+        "status": "todo",
+        "subtasks": []
+      },
+      {
+        "id": 7,
+        "title": "Implement Gallery Filtering and Lightbox",
+        "description": "Enhance the gallery with functionality to filter artwork by category and view individual pieces in a detailed lightbox modal.",
+        "details": "Add UI controls (e.g., buttons) to the gallery page to filter artwork by category ('ceramics', 'bags'). Implement a modal/lightbox component that opens when a gallery item is clicked, displaying a larger image and its details.",
+        "testStrategy": "Test the category filters to ensure they correctly show/hide artwork. Click on multiple gallery items to verify the lightbox opens with the correct image and data. Test the lightbox closing functionality.",
+        "priority": "medium",
+        "dependencies": [
+          6
+        ],
+        "status": "todo",
+        "subtasks": []
+      },
+      {
+        "id": 8,
+        "title": "Create Animated 4x4 Photo Grid Component",
+        "description": "Develop the eye-catching 4x4 animated photo grid component using Framer Motion for a dynamic visual effect.",
+        "details": "Build a new component that displays a 4x4 grid of square images. Use Framer Motion to implement a continuous, subtle animation effect (e.g., moving, rotating) similar to the reference site. Use optimized 4x4 square images for this component.",
+        "testStrategy": "Render the component on a page and verify the 4x4 grid displays correctly. Observe the animation to ensure it is smooth and not performance-intensive. Check for any console errors from Framer Motion.",
+        "priority": "medium",
+        "dependencies": [
+          1
+        ],
+        "status": "todo",
+        "subtasks": []
+      },
+      {
+        "id": 9,
+        "title": "Apply UI Polish and Page Transitions",
+        "description": "Refine the overall user experience by adding smooth page transitions and micro-interactions like hover effects.",
+        "details": "Use Framer Motion's `AnimatePresence` or a similar feature to add smooth transitions between page routes. Add subtle hover effects to buttons, navigation links, and gallery items to provide visual feedback to the user.",
+        "testStrategy": "Navigate between all pages and confirm that transitions are smooth. Hover over all interactive elements to ensure they have the intended effects. Check for performance issues related to the animations.",
+        "priority": "low",
+        "dependencies": [
+          4,
+          7,
+          8
+        ],
+        "status": "todo",
+        "subtasks": []
+      },
+      {
+        "id": 10,
+        "title": "Optimize for SEO, Performance, and Conduct Final Testing",
+        "description": "Perform final optimizations to meet performance targets, improve SEO, and ensure cross-browser compatibility before deployment.",
+        "details": "Add appropriate meta tags (title, description) and structured data for SEO. Run a Lighthouse audit and address any issues to achieve a score of 90+. Implement content loading states. Conduct thorough cross-browser testing (Chrome, Firefox, Safari) and refine mobile responsiveness.",
+        "testStrategy": "Run a Google Lighthouse report and verify scores are 90+ across all categories. Use an SEO analysis tool to check for meta tags. Test the website on different browsers and mobile devices to ensure consistent rendering and functionality. Verify loading states appear on slow network conditions.",
+        "priority": "medium",
+        "dependencies": [
+          9
+        ],
+        "status": "todo",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-09-08T16:58:47.059Z",
+      "updated": "2025-09-08T17:08:56.942Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

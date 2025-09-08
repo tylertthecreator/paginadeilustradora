@@ -6,7 +6,7 @@ A clean, organized workspace for AI-powered task management and development proj
 
 - **Task Master AI**: Complete AI-powered task management system
 - **Cursor IDE Integration**: Pre-configured MCP (Model Context Protocol) integration
-- **Free AI Models**: Configured with Google Gemini and Claude Code models (no API costs!)
+- **AI Models**: Configured with Google Gemini and Claude Code models
 - **Project Templates**: Ready-to-use PRD templates and development workflows
 - **Clean Architecture**: Minimal, focused setup for productive development
 

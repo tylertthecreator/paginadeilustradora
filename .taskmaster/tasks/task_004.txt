@@ -1,0 +1,11 @@
+# Task ID: 4
+# Title: Develop Contact Page with Form and Social Links
+# Status: todo
+# Dependencies: 2
+# Priority: medium
+# Description: Build the contact page with a functional form for inquiries and add social media links to the site's footer.
+# Details:
+Create a `Contact` page component that includes a form with fields for name, email, and message. Implement form validation. Integrate a service like EmailJS for form submissions. Add Instagram and LinkedIn icons (using React Icons) with direct links to the footer.
+
+# Test Strategy:
+Test the contact form validation by submitting with empty/invalid fields. Send a test submission and verify it is received via the EmailJS service. Click the social media icons in the footer to confirm they link to the correct profiles.
