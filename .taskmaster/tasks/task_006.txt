@@ -1,0 +1,11 @@
+# Task ID: 6
+# Title: Build 'My Work' Gallery Grid
+# Status: todo
+# Dependencies: 3, 5
+# Priority: high
+# Description: Implement the main gallery on the 'My Work' page, displaying artwork from the JSON data source in a responsive 4x5 grid.
+# Details:
+On the `/work` page, fetch artwork data from the JSON file. Dynamically render the images in a responsive grid layout, maintaining a 4x5 aspect ratio. Use the Next.js `Image` component for automatic optimization.
+
+# Test Strategy:
+Verify that all artwork from the JSON file is displayed on the page. Check that the grid is responsive and adapts to different screen sizes. Use browser developer tools to confirm that images are being served as optimized formats (e.g., WebP) by the Next.js Image component.

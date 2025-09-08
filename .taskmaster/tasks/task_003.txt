@@ -1,0 +1,11 @@
+# Task ID: 3
+# Title: Set Up Page Routing and Static Content Pages
+# Status: todo
+# Dependencies: 2
+# Priority: high
+# Description: Configure the application's routing and create the initial static pages for 'About Me' and 'Shop' as per the content structure.
+# Details:
+Use Next.js App Router to set up routes for `/`, `/about`, `/work`, `/shop`, and `/contact`. Create the 'About Me' page with placeholder text sections. Build the 'Shop' page featuring a prominent button/link to the external Etsy store.
+
+# Test Strategy:
+Navigate to each of the defined routes (`/about`, `/shop`, etc.) to ensure they render the correct page component. Confirm the Etsy link on the shop page is correct and functional.

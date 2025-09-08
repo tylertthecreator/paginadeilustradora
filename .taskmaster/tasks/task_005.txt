@@ -1,0 +1,11 @@
+# Task ID: 5
+# Title: Define and Implement Data Structure for Artwork
+# Status: todo
+# Dependencies: 1
+# Priority: medium
+# Description: Create a simple, file-based data management system using JSON files to store metadata for all artwork.
+# Details:
+Create a `data` directory to hold JSON files. Define a schema for artwork metadata (e.g., id, title, description, category, imageSrc). Populate a JSON file with sample data for both ceramics and bags. Organize corresponding images in the `/public` folder.
+
+# Test Strategy:
+Validate the JSON file structure against the defined schema. Write a simple script or component to read and log the JSON data to the console to ensure it's parseable and correct.

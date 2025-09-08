@@ -1,0 +1,11 @@
+# Task ID: 7
+# Title: Implement Gallery Filtering and Lightbox
+# Status: todo
+# Dependencies: 6
+# Priority: medium
+# Description: Enhance the gallery with functionality to filter artwork by category and view individual pieces in a detailed lightbox modal.
+# Details:
+Add UI controls (e.g., buttons) to the gallery page to filter artwork by category ('ceramics', 'bags'). Implement a modal/lightbox component that opens when a gallery item is clicked, displaying a larger image and its details.
+
+# Test Strategy:
+Test the category filters to ensure they correctly show/hide artwork. Click on multiple gallery items to verify the lightbox opens with the correct image and data. Test the lightbox closing functionality.
