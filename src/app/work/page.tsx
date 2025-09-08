@@ -1,54 +1,68 @@
-'use client';
-
+import type { Metadata } from "next";
 import { motion } from "framer-motion";
 import { FaFilter, FaEye, FaShoppingBag } from "react-icons/fa";
 import { useState } from "react";
 
+export const metadata: Metadata = {
+  title: "Portfolio - Handcrafted Ceramics & Artisan Bags",
+  description: "Explore Toska CR's portfolio of handcrafted ceramics and artisan bags. Each piece showcases unique design, sustainable craftsmanship, and artistic excellence.",
+  openGraph: {
+    title: "Portfolio - Handcrafted Ceramics & Artisan Bags",
+    description: "Explore Toska CR's portfolio of handcrafted ceramics and artisan bags. Each piece showcases unique design and sustainable craftsmanship.",
+  },
+};
+
 export default function WorkPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // Placeholder data - this will be replaced with actual data from JSON files later
+  // Artwork data with placeholder images
   const artwork = [
     {
       id: 1,
       title: "Terracotta Bowl Set",
       category: "ceramics",
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center",
+      alt: "Hand-thrown terracotta ceramic bowls with natural finish",
       description: "Hand-thrown ceramic bowls with natural terracotta finish"
     },
     {
       id: 2,
       title: "Sage Green Vase",
       category: "ceramics", 
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center",
+      alt: "Elegant ceramic vase with sage green glaze and organic curves",
       description: "Elegant vase with organic curves and sage green glaze"
     },
     {
       id: 3,
       title: "Leather Crossbody Bag",
       category: "bags",
-      image: "/api/placeholder/400/400", 
+      image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop&crop=center", 
+      alt: "Handcrafted leather crossbody bag with brass hardware",
       description: "Handcrafted leather bag with brass hardware"
     },
     {
       id: 4,
       title: "Olive Pottery Plate",
       category: "ceramics",
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center",
+      alt: "Ceramic dinner plate with olive green glaze and natural edge",
       description: "Dinner plate with olive green glaze and natural edge"
     },
     {
       id: 5,
       title: "Canvas Tote Bag",
       category: "bags",
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop&crop=center",
+      alt: "Sturdy canvas tote bag with leather handles",
       description: "Sturdy canvas tote with leather handles"
     },
     {
       id: 6,
       title: "Beige Ceramic Mug",
       category: "ceramics",
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center",
+      alt: "Ceramic coffee mug with warm beige glaze and comfortable handle",
       description: "Coffee mug with warm beige glaze and comfortable handle"
     }
   ];
@@ -133,13 +147,31 @@ export default function WorkPage() {
               className="group cursor-pointer"
             >
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-terracotta-100 hover:shadow-xl transition-shadow duration-300">
-                {/* Image Placeholder */}
-                <div className="aspect-square bg-gradient-to-br from-terracotta-100 to-sage-100 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-terracotta-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <FaEye className="text-terracotta-600 text-xl" />
+                {/* Image */}
+                <div className="aspect-square relative overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  {/* Fallback for failed images */}
+                  <div 
+                    className="absolute inset-0 bg-gradient-to-br from-terracotta-100 to-sage-100 flex items-center justify-center hidden"
+                    style={{ display: 'none' }}
+                  >
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-terracotta-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <FaEye className="text-terracotta-600 text-xl" />
+                      </div>
+                      <p className="text-sage-600 text-sm">Image Loading...</p>
                     </div>
-                    <p className="text-sage-600 text-sm">Image Coming Soon</p>
                   </div>
                 </div>
                 

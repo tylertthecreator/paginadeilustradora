@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaInstagram, FaPinterest, FaLinkedin, FaEtsy } from "react-icons/fa";
-import { useState } from "react";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaInstagram, FaPinterest, FaLinkedin, FaEtsy, FaSpinner, FaCheck } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import emailjs from '@emailjs/browser';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,13 @@ export default function ContactPage() {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  useEffect(() => {
+    // Initialize EmailJS with your public key
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'your_public_key');
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -20,11 +28,36 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic will be implemented later with EmailJS
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'your_service_id',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'your_template_id',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'Toska CR'
+        }
+      );
+
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -127,10 +160,44 @@ export default function ContactPage() {
                   
                   <button
                     type="submit"
-                    className="w-full bg-terracotta-600 text-white py-3 px-6 rounded-lg hover:bg-terracotta-700 transition-colors font-medium text-lg"
+                    disabled={isSubmitting}
+                    className={`w-full py-3 px-6 rounded-lg font-medium text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
+                      isSubmitting
+                        ? 'bg-terracotta-400 cursor-not-allowed'
+                        : 'bg-terracotta-600 hover:bg-terracotta-700'
+                    }`}
                   >
-                    Send Message
+                    {isSubmitting ? (
+                      <>
+                        <FaSpinner className="animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      'Send Message'
+                    )}
                   </button>
+
+                  {/* Status Messages */}
+                  {submitStatus === 'success' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-2 text-green-700"
+                    >
+                      <FaCheck className="text-green-600" />
+                      Thank you! Your message has been sent successfully. I'll get back to you soon.
+                    </motion.div>
+                  )}
+
+                  {submitStatus === 'error' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700"
+                    >
+                      Sorry, there was an error sending your message. Please try again or contact me directly at hello@toskacr.com
+                    </motion.div>
+                  )}
                 </form>
               </div>
             </motion.div>
