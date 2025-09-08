@@ -1,126 +1,151 @@
-# New Project
+# Task Master AI Workspace
 
-A modern web development workspace with multiple portfolio projects and AI-powered task management.
+A clean, organized workspace for AI-powered task management and development projects.
 
 ## 🚀 Features
 
-- **Multiple Portfolio Projects**: Different portfolio implementations in `portfolio/`, `glori_webpage/`, and `portfolio_backup/`
-- **Next.js Applications**: Modern React applications with TypeScript
-- **Tailwind CSS**: Utility-first CSS framework for styling
-- **AI Task Management**: Integrated with Task Master AI for intelligent project management
+- **Task Master AI**: Complete AI-powered task management system
+- **Cursor IDE Integration**: Pre-configured MCP (Model Context Protocol) integration
+- **Free AI Models**: Configured with Google Gemini and Claude Code models (no API costs!)
+- **Project Templates**: Ready-to-use PRD templates and development workflows
+- **Clean Architecture**: Minimal, focused setup for productive development
 
 ## 📁 Project Structure
 
 ```
-newproject/
-├── portfolio/           # Main portfolio application
-├── glori_webpage/       # Glori webpage project
-├── portfolio_backup/    # Backup portfolio version
+taskmaster-workspace/
 ├── .taskmaster/         # Task Master AI configuration and files
+│   ├── config.json      # AI model settings and preferences
+│   ├── templates/       # PRD templates and examples
+│   └── docs/           # Project documentation
 ├── .cursor/             # Cursor IDE configuration
-├── .gitignore          # Git ignore rules
-├── package.json        # Main project dependencies
-└── README.md           # This file
+│   ├── mcp.json        # Model Context Protocol setup
+│   └── rules/          # Development rules and guidelines
+├── package.json        # Task Master AI dependency
+├── README.md           # This file
+├── LICENSE             # MIT License
+└── .gitignore          # Git ignore rules
 ```
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: Next.js, React 19, TypeScript
-- **Styling**: Tailwind CSS
-- **AI Tools**: Task Master AI with Google Gemini models
-- **Development**: Cursor IDE with MCP integration
+- **Task Management**: Task Master AI with MCP integration
+- **AI Models**: Google Gemini 2.5 Pro, Claude Code models
+- **IDE**: Cursor with AI-powered development
+- **Configuration**: JSON-based setup for models and workflows
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 20+ 
-- npm or yarn
+- Node.js (v18 or higher)
+- Cursor IDE (recommended) or any editor
+- Git for version control
 
-### Installation
+### Quick Setup
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd newproject
+1. **Clone this workspace**
+   ```bash
+   git clone <your-repo-url>
+   cd taskmaster-workspace
+   ```
+
+2. **Install Task Master AI**
+   ```bash
+   npm install
+   ```
+
+3. **Open in Cursor**
+   - The MCP integration will be automatically loaded
+   - Task Master AI tools will be available immediately
+
+### Configuration
+
+The workspace is pre-configured with:
+- ✅ **Google Gemini API** (add your API key to `.cursor/mcp.json`)
+- ✅ **Claude Code models** (free via Cursor)
+- ✅ **Optimized settings** for development workflows
+
+## 📋 Using Task Master AI
+
+### Core Commands
+
+1. **Create a Project Requirements Document (PRD)**
+   ```bash
+   # Use the template in .taskmaster/templates/example_prd.txt
+   npx task-master parse-prd your-project.txt
+   ```
+
+2. **Manage Tasks**
+   ```bash
+   npx task-master list          # See all tasks
+   npx task-master next          # Get next task to work on
+   npx task-master show 1        # View task details
+   npx task-master expand --id=1 # Break down complex tasks
+   ```
+
+3. **Research & Development**
+   ```bash
+   npx task-master research "Latest React 19 best practices"
+   npx task-master update --from=5 --prompt="Changed to TypeScript"
+   ```
+
+### In Cursor IDE
+
+Task Master tools are available directly in the chat:
+- Ask questions about your tasks
+- Get AI-powered development assistance
+- Manage your project workflow seamlessly
+
+## 🎯 Perfect For
+
+- **Solo Developers**: Organize and track development tasks
+- **Learning Projects**: Break down complex tutorials into manageable steps
+- **Open Source**: Manage contributions and feature development
+- **Prototyping**: Quickly organize and execute new ideas
+
+## 🔑 API Setup (Optional)
+
+Add to `.cursor/mcp.json` for full functionality:
+
+```json
+{
+  "mcpServers": {
+    "task-master-ai": {
+      "command": "npx",
+      "args": ["-y", "task-master-mcp"],
+      "env": {
+        "GOOGLE_API_KEY": "your-free-google-api-key"
+      }
+    }
+  }
+}
 ```
 
-2. Install dependencies:
-```bash
-npm install
-```
+**Free API Key**: Get yours at [Google AI Studio](https://aistudio.google.com/) (1M tokens/day free!)
 
-3. Choose which project to work on:
+## 📖 Documentation
 
-#### For Main Portfolio:
-```bash
-cd portfolio
-npm install
-npm run dev
-```
-
-#### For Glori Webpage:
-```bash
-cd glori_webpage  
-npm install
-npm run dev
-```
-
-### 🤖 Task Master AI
-
-This project includes Task Master AI for intelligent task management:
-
-- **Configuration**: `.taskmaster/config.json`
-- **Free AI Models**: Uses Google Gemini and Claude Code models
-- **MCP Integration**: Configured in `.cursor/mcp.json`
-
-#### Task Master Commands:
-```bash
-# View current tasks
-npx task-master list
-
-# Get next task to work on
-npx task-master next
-
-# View specific task
-npx task-master show <id>
-```
-
-## 📝 Development Workflow
-
-1. Use Task Master AI to manage development tasks
-2. Work on individual projects in their respective directories
-3. Commit changes regularly with descriptive messages
-
-## 🔧 Configuration
-
-### AI Models (Task Master)
-- **Main Model**: Google Gemini 2.5 Pro (Free)
-- **Research Model**: Claude Code Sonnet (Free)  
-- **Fallback Model**: Claude Code Opus (Free)
-
-### Environment Variables
-Required API keys in `.cursor/mcp.json`:
-- `GOOGLE_API_KEY`: For Gemini models
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- [Task Master Guide](.cursor/rules/taskmaster/taskmaster.mdc) - Complete command reference
+- [Development Workflow](.cursor/rules/taskmaster/dev_workflow.mdc) - Best practices
+- [Example PRD](.taskmaster/templates/example_prd.txt) - Template for requirements
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+This workspace is designed to be:
+1. **Forked** for your own projects
+2. **Customized** with your preferences
+3. **Extended** with your own rules and templates
+
+## 📝 License
+
+MIT License - Use this workspace for any project, personal or commercial.
 
 ## 📞 Contact
 
 - GitHub: [@aleksandramusijenko](https://github.com/aleksandramusijenko)
-- Project Link: [https://github.com/aleksandramusijenko/newproject](https://github.com/aleksandramusijenko/newproject)
+- Email: musijenkoaleksandra@gmail.com
 
 ---
 
-⭐ **Star this repository if you find it helpful!**
-# Personal Project Setup Complete
+**🤖 Powered by Task Master AI - Making development workflows intelligent**
