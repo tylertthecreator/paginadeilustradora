@@ -2,7 +2,7 @@
 
 import { Component, ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { FaExclamationTriangle, FaRefresh } from 'react-icons/fa';
+import { FaExclamationTriangle, FaRedo } from 'react-icons/fa';
 
 interface Props {
   children: ReactNode;
@@ -68,7 +68,7 @@ export default class ErrorBoundary extends Component<Props, State> {
               onClick={this.handleRetry}
               className="inline-flex items-center gap-2 bg-vibrant-pink-600 text-creamy-white-50 px-6 py-3 rounded-full hover:bg-vibrant-pink-700 transition-colors font-medium"
             >
-              <FaRefresh />
+              <FaRedo />
               Try Again
             </motion.button>
             

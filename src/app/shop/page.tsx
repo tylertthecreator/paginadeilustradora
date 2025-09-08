@@ -80,7 +80,7 @@ export default function ShopPage() {
                 href="https://etsy.com/shop/toskacr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-terracotta-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-terracotta-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                className="inline-flex items-center gap-3 bg-terracotta-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-terracotta-700 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
               >
                 <FaEtsy className="text-2xl" />
                 Visit Etsy Shop
