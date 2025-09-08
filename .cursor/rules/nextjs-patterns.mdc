@@ -1,0 +1,117 @@
+---
+description: Next.js 15 App Router patterns and best practices for this project
+globs: src/app/**/*.tsx, src/app/**/*.ts
+alwaysApply: true
+---
+
+# Next.js 15 App Router Patterns
+
+## Server vs Client Components
+
+### ✅ DO: Use Client Components for
+- Components with `useState`, `useEffect`, or other React hooks
+- Components using `framer-motion` animations
+- Interactive components with event handlers
+- Components using browser APIs
+
+```typescript
+'use client';
+
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+
+export default function InteractiveComponent() {
+  const [state, setState] = useState(false);
+  return <motion.div>...</motion.div>;
+}
+```
+
+### ✅ DO: Use Server Components for
+- Static content rendering
+- Data fetching without client-side state
+- Metadata generation
+- Layout components without interactivity
+
+```typescript
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Page Title',
+  description: 'Page description'
+};
+
+export default function StaticPage() {
+  return <div>Static content</div>;
+}
+```
+
+## Metadata Management
+
+### ✅ DO: Use separate layout.tsx files for metadata
+```typescript
+// src/app/work/layout.tsx
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portfolio - Handcrafted Ceramics & Artisan Bags",
+  description: "Explore Toska CR's portfolio...",
+};
+
+export default function WorkLayout({ children }: { children: React.ReactNode }) {
+  return children;
+}
+```
+
+### ❌ DON'T: Export metadata from Client Components
+```typescript
+'use client';
+// ❌ This will cause errors
+export const metadata: Metadata = { ... };
+```
+
+## Dynamic Imports
+
+### ✅ DO: Use dynamic imports for heavy components
+```typescript
+import dynamic from 'next/dynamic';
+
+const WorkGallery = dynamic(() => import('./WorkGallery'), {
+  ssr: false,
+  loading: () => <div>Loading...</div>
+});
+```
+
+## File Naming Conventions
+- `page.tsx` - Route pages
+- `layout.tsx` - Layout components
+- `loading.tsx` - Loading UI
+- `error.tsx` - Error UI
+- `not-found.tsx` - 404 pages
+
+## Component Patterns
+
+### ✅ DO: Use proper TypeScript interfaces
+```typescript
+interface ArtworkItem {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
+  alt: string;
+  description: string;
+}
+
+interface WorkGalleryProps {
+  artwork: ArtworkItem[];
+}
+```
+
+### ✅ DO: Use proper error handling
+```typescript
+// In ErrorBoundary.tsx
+export default class ErrorBoundary extends Component<Props, State> {
+  static getDerivedStateFromError(error: Error): State {
+    return { hasError: true, error };
+  }
+}
+```

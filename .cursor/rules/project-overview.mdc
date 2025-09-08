@@ -1,0 +1,60 @@
+---
+description: Toska CR Portfolio Project Overview and Architecture
+globs: **/*
+alwaysApply: true
+---
+
+# Toska CR Portfolio Project
+
+## Project Overview
+This is a Next.js 15.5.2 portfolio website for Toska CR, featuring handcrafted ceramics and artisan bags. The project uses modern React patterns with App Router, TypeScript, and Tailwind CSS.
+
+## Key Architecture Decisions
+- **Next.js App Router**: Using the latest App Router with Server/Client Component separation
+- **Client Components**: Pages using framer-motion animations are Client Components
+- **Dynamic Imports**: WorkGallery uses dynamic import with SSR disabled for performance
+- **Layout-based Metadata**: Each page has its own layout.tsx for metadata management
+- **Component Structure**: Modular components with clear separation of concerns
+
+## Tech Stack
+- **Framework**: Next.js 15.5.2 with Turbopack
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 4
+- **Animations**: Framer Motion 12.23.12
+- **Icons**: React Icons 5.5.0
+- **Email**: EmailJS 4.4.1
+
+## Project Structure
+```
+src/
+├── app/
+│   ├── about/
+│   │   ├── layout.tsx    # Metadata for about page
+│   │   └── page.tsx      # Client Component with animations
+│   ├── work/
+│   │   ├── layout.tsx    # Metadata for work page
+│   │   ├── page.tsx      # Client Component with dynamic import
+│   │   └── WorkGallery.tsx # Interactive gallery component
+│   ├── shop/
+│   │   └── page.tsx      # Client Component
+│   ├── contact/
+│   │   └── page.tsx      # Client Component with form
+│   ├── layout.tsx        # Root layout with fonts and providers
+│   └── globals.css       # Global styles and Tailwind imports
+└── components/
+    ├── Header.tsx        # Navigation component
+    ├── Footer.tsx        # Footer with social links
+    ├── ErrorBoundary.tsx # Error handling
+    └── LoadingSpinner.tsx # Loading states
+```
+
+## Color Palette
+- **Primary**: Terracotta (#D2691E), Sage (#87A96B), Olive (#6B8E23)
+- **Accent**: Vibrant Pink (#E91E63), Dark Teal (#2C5F5D)
+- **Neutral**: Cream (#F5F5DC), Beige (#F5DEB3)
+
+## Important Notes
+- All pages using framer-motion are Client Components
+- Metadata is handled in separate layout.tsx files
+- Dynamic imports are used for performance optimization
+- Error boundaries are implemented for robust error handling

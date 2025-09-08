@@ -1,0 +1,184 @@
+---
+description: Tailwind CSS styling guidelines and design system for Toska CR portfolio
+globs: src/**/*.tsx, src/**/*.css
+alwaysApply: true
+---
+
+# Styling Guidelines - Toska CR Portfolio
+
+## Design System
+
+### Color Palette
+```css
+/* Primary Colors */
+--terracotta-50: #FDF2F8
+--terracotta-100: #FCE7F3
+--terracotta-600: #D2691E
+--terracotta-700: #B8860B
+
+--sage-50: #F0F4F0
+--sage-100: #E8F0E8
+--sage-600: #87A96B
+--sage-700: #6B8E23
+
+--olive-100: #E6F3E6
+--olive-600: #6B8E23
+--olive-700: #556B2F
+
+/* Accent Colors */
+--vibrant-pink-50: #FDF2F8
+--vibrant-pink-600: #E91E63
+--vibrant-pink-700: #C2185B
+
+--dark-teal-50: #F0F4F4
+--dark-teal-600: #2C5F5D
+--dark-teal-700: #1B3A38
+
+/* Neutral Colors */
+--cream-50: #F5F5DC
+--beige-50: #F5DEB3
+--beige-200: #DEB887
+```
+
+## Typography
+
+### ✅ DO: Use consistent font classes
+```tsx
+// Headings
+<h1 className="text-5xl md:text-6xl font-serif text-terracotta-600">
+  Main Heading
+</h1>
+
+<h2 className="text-3xl font-serif text-terracotta-600">
+  Section Heading
+</h2>
+
+// Body text
+<p className="text-xl text-sage-700 max-w-3xl mx-auto">
+  Body text with proper spacing
+</p>
+
+// Small text
+<p className="text-sage-600 text-sm">
+  Small descriptive text
+</p>
+```
+
+### ✅ DO: Use handwritten font for branding
+```tsx
+<h3 className="text-2xl font-handwritten text-vibrant-pink-600">
+  Toska CR
+</h3>
+```
+
+## Layout Patterns
+
+### ✅ DO: Use consistent spacing
+```tsx
+// Page containers
+<div className="min-h-screen bg-cream-50">
+  <div className="container mx-auto px-4 py-16">
+    {/* Content */}
+  </div>
+</div>
+
+// Section spacing
+<section className="mb-16">
+  <div className="bg-white rounded-2xl p-8 shadow-lg border border-terracotta-100">
+    {/* Section content */}
+  </div>
+</section>
+```
+
+### ✅ DO: Use responsive design patterns
+```tsx
+// Responsive grids
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+// Responsive text
+<h1 className="text-5xl md:text-6xl font-serif">
+
+// Responsive flexbox
+<div className="flex flex-col sm:flex-row gap-4 justify-center">
+```
+
+## Component Styling
+
+### ✅ DO: Use consistent button styles
+```tsx
+// Primary button
+<button className="bg-terracotta-600 text-white px-8 py-3 rounded-full hover:bg-terracotta-700 transition-colors font-medium">
+  Primary Action
+</button>
+
+// Secondary button
+<button className="bg-sage-600 text-white px-8 py-3 rounded-full hover:bg-sage-700 transition-colors font-medium">
+  Secondary Action
+</button>
+
+// Outline button
+<button className="bg-white text-sage-700 hover:bg-terracotta-50 border border-terracotta-200 px-6 py-3 rounded-full font-medium transition-colors">
+  Outline Button
+</button>
+```
+
+### ✅ DO: Use consistent card styles
+```tsx
+<div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-terracotta-100 hover:shadow-xl transition-shadow duration-300">
+  <div className="aspect-square relative overflow-hidden">
+    {/* Image content */}
+  </div>
+  <div className="p-6">
+    {/* Card content */}
+  </div>
+</div>
+```
+
+## Animation Guidelines
+
+### ✅ DO: Use consistent motion patterns
+```tsx
+// Page entrance
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+>
+
+// Staggered animations
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: index * 0.1 }}
+>
+
+// Hover effects
+<div className="group cursor-pointer">
+  <div className="transition-transform duration-300 group-hover:scale-105">
+    {/* Hover content */}
+  </div>
+</div>
+```
+
+## Accessibility
+
+### ✅ DO: Use proper semantic HTML
+```tsx
+<main className="flex-1">
+  <section className="mb-16">
+    <h2 className="text-3xl font-serif text-terracotta-600">
+      Section Title
+    </h2>
+  </section>
+</main>
+```
+
+### ✅ DO: Use proper ARIA labels
+```tsx
+<button 
+  className="md:hidden p-2 text-dark-teal-700 hover:text-vibrant-pink-600 transition-colors" 
+  aria-label="Toggle mobile menu"
+>
+  <svg>...</svg>
+</button>
+```

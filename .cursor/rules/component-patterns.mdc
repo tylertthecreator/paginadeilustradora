@@ -1,0 +1,229 @@
+---
+description: React component patterns and best practices for Toska CR portfolio
+globs: src/components/**/*.tsx, src/app/**/*.tsx
+alwaysApply: true
+---
+
+# Component Patterns - Toska CR Portfolio
+
+## Component Architecture
+
+### ✅ DO: Use proper TypeScript interfaces
+```typescript
+interface ArtworkItem {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
+  alt: string;
+  description: string;
+}
+
+interface WorkGalleryProps {
+  artwork: ArtworkItem[];
+}
+```
+
+### ✅ DO: Use default exports for components
+```typescript
+export default function WorkGallery({ artwork }: WorkGalleryProps) {
+  return <div>...</div>;
+}
+```
+
+## State Management
+
+### ✅ DO: Use useState for local component state
+```typescript
+'use client';
+
+import { useState } from 'react';
+
+export default function InteractiveComponent() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  
+  return (
+    <div>
+      {/* Component content */}
+    </div>
+  );
+}
+```
+
+### ✅ DO: Use proper state update patterns
+```typescript
+// For form data
+const [formData, setFormData] = useState({
+  name: '',
+  email: '',
+  subject: '',
+  message: ''
+});
+
+const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  setFormData(prev => ({
+    ...prev,
+    [e.target.name]: e.target.value
+  }));
+};
+```
+
+## Event Handling
+
+### ✅ DO: Use proper event handler types
+```typescript
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  // Handle form submission
+};
+
+const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  // Handle button click
+};
+
+const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Handle input change
+};
+```
+
+### ✅ DO: Use proper form handling
+```typescript
+const [isSubmitting, setIsSubmitting] = useState(false);
+const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  
+  try {
+    // Submit logic
+    setSubmitStatus('success');
+  } catch (error) {
+    setSubmitStatus('error');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+```
+
+## Error Handling
+
+### ✅ DO: Use error boundaries for component errors
+```typescript
+export default class ErrorBoundary extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error: Error): State {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: any) {
+    console.error('ErrorBoundary caught an error:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <div>Something went wrong.</div>;
+    }
+
+    return this.props.children;
+  }
+}
+```
+
+### ✅ DO: Use proper image error handling
+```typescript
+<img
+  src={item.image}
+  alt={item.alt}
+  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+  loading="lazy"
+  onError={(e) => {
+    const target = e.target as HTMLImageElement;
+    target.style.display = 'none';
+    const fallback = target.nextElementSibling as HTMLElement;
+    if (fallback) fallback.style.display = 'flex';
+  }}
+/>
+```
+
+## Performance Patterns
+
+### ✅ DO: Use dynamic imports for heavy components
+```typescript
+import dynamic from 'next/dynamic';
+
+const WorkGallery = dynamic(() => import('./WorkGallery'), {
+  ssr: false,
+  loading: () => <div className="text-center py-8">Loading gallery...</div>
+});
+```
+
+### ✅ DO: Use proper memoization when needed
+```typescript
+import { useMemo } from 'react';
+
+const filteredArtwork = useMemo(() => {
+  return selectedCategory === 'all' 
+    ? artwork 
+    : artwork.filter(item => item.category === selectedCategory);
+}, [artwork, selectedCategory]);
+```
+
+## Animation Patterns
+
+### ✅ DO: Use consistent Framer Motion patterns
+```typescript
+import { motion } from 'framer-motion';
+
+// Page entrance
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+>
+
+// Staggered animations
+{items.map((item, index) => (
+  <motion.div
+    key={item.id}
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: index * 0.1 }}
+  >
+    {/* Item content */}
+  </motion.div>
+))}
+```
+
+## Navigation Patterns
+
+### ✅ DO: Use Next.js Link for internal navigation
+```typescript
+import Link from 'next/link';
+
+<Link 
+  href="/work" 
+  className="text-dark-teal-700 hover:text-vibrant-pink-600 transition-colors duration-300 font-medium text-lg uppercase tracking-wide relative group"
+>
+  Work
+  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-vibrant-pink-600 transition-all duration-300 group-hover:w-full"></span>
+</Link>
+```
+
+### ✅ DO: Use proper external link handling
+```typescript
+<a 
+  href="https://instagram.com/toskacr" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="text-dark-teal-600 hover:text-vibrant-pink-600 transition-colors duration-300 p-2 rounded-full hover:bg-vibrant-pink-50" 
+  aria-label="Follow on Instagram"
+>
+  <FaInstagram />
+</a>
+```
