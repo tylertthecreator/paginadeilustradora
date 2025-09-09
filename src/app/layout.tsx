@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import PageTransition from "@/components/PageTransition";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -91,7 +92,9 @@ export default function RootLayout({
         <ErrorBoundary>
           <Header />
           <main className="flex-1">
-            {children}
+            <PageTransition>
+              {children}
+            </PageTransition>
           </main>
           <Footer />
         </ErrorBoundary>

@@ -1,8 +1,10 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { FaFilter, FaEye, FaShoppingBag } from "react-icons/fa";
+import { FaShoppingBag } from "react-icons/fa";
 import dynamic from 'next/dynamic';
+import { useState, useEffect } from 'react';
+import { Artwork } from '@/types/artwork';
 
 const WorkGallery = dynamic(() => import('./WorkGallery'), {
   ssr: false,
@@ -12,57 +14,27 @@ const WorkGallery = dynamic(() => import('./WorkGallery'), {
 // Metadata moved to layout.tsx since this is now a Client Component
 
 export default function WorkPage() {
-  // Artwork data with placeholder images
-  const artwork = [
-    {
-      id: 1,
-      title: "Terracotta Bowl Set",
-      category: "ceramics",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center",
-      alt: "Hand-thrown terracotta ceramic bowls with natural finish",
-      description: "Hand-thrown ceramic bowls with natural terracotta finish"
-    },
-    {
-      id: 2,
-      title: "Sage Green Vase",
-      category: "ceramics", 
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center",
-      alt: "Elegant ceramic vase with sage green glaze and organic curves",
-      description: "Elegant vase with organic curves and sage green glaze"
-    },
-    {
-      id: 3,
-      title: "Leather Crossbody Bag",
-      category: "bags",
-      image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop&crop=center", 
-      alt: "Handcrafted leather crossbody bag with brass hardware",
-      description: "Handcrafted leather bag with brass hardware"
-    },
-    {
-      id: 4,
-      title: "Olive Pottery Plate",
-      category: "ceramics",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center",
-      alt: "Ceramic dinner plate with olive green glaze and natural edge",
-      description: "Dinner plate with olive green glaze and natural edge"
-    },
-    {
-      id: 5,
-      title: "Canvas Tote Bag",
-      category: "bags",
-      image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop&crop=center",
-      alt: "Sturdy canvas tote bag with leather handles",
-      description: "Sturdy canvas tote with leather handles"
-    },
-    {
-      id: 6,
-      title: "Beige Ceramic Mug",
-      category: "ceramics",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center",
-      alt: "Ceramic coffee mug with warm beige glaze and comfortable handle",
-      description: "Coffee mug with warm beige glaze and comfortable handle"
-    }
-  ];
+  const [artwork, setArtwork] = useState<Artwork[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Load artwork data
+    const loadArtwork = async () => {
+      try {
+        const response = await fetch('/data/artwork.json');
+        const data = await response.json();
+        setArtwork(data.artwork);
+      } catch (error) {
+        console.error('Error loading artwork:', error);
+        // Fallback to empty array
+        setArtwork([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadArtwork();
+  }, []);
 
   return (
     <div className="min-h-screen bg-cream-50">
@@ -83,7 +55,16 @@ export default function WorkPage() {
         </motion.div>
 
         {/* Interactive Gallery */}
-        <WorkGallery artwork={artwork} />
+        {loading ? (
+          <div className="text-center py-16">
+            <div className="w-16 h-16 bg-terracotta-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-8 h-8 border-4 border-terracotta-600 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+            <p className="text-sage-600">Loading artwork...</p>
+          </div>
+        ) : (
+          <WorkGallery artwork={artwork} />
+        )}
 
         {/* Call to Action */}
         <motion.div
