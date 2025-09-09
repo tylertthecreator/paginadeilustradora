@@ -22,6 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://toskacr.com'),
   title: {
     default: "Toska CR - Handcrafted Ceramics & Artisan Bags",
     template: "%s | Toska CR"
@@ -69,14 +70,15 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
     creator: "@toskacr",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
   verification: {
     google: "your-google-verification-code",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({

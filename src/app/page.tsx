@@ -1,174 +1,171 @@
 'use client';
 
+import React from 'react';
 import { motion } from "framer-motion";
 import Link from "next/link";
-import AnimatedPhotoGrid from "@/components/AnimatedPhotoGrid";
+import BrandLogo from "@/components/BrandLogo";
+import { FaPalette, FaPencilAlt, FaCircle, FaRibbon, FaArrowRight } from 'react-icons/fa';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-creamy-white-50 via-creamy-white-100 to-sage-50"></div>
-        <div className="absolute top-20 right-20 w-32 h-32 bg-vibrant-pink-200 rounded-full opacity-20 animate-bounce-gentle"></div>
-        <div className="absolute bottom-20 left-20 w-24 h-24 bg-terracotta-200 rounded-full opacity-30 animate-bounce-gentle" style={{animationDelay: '1s'}}></div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center z-10 max-w-4xl mx-auto px-4"
-        >
-          {/* Main heading */}
-          <h1 className="text-6xl md:text-8xl font-handwritten text-vibrant-pink-600 mb-6 leading-tight">
-            Toska CR
-          </h1>
-          <p className="text-xl md:text-2xl text-dark-teal-700 mb-8 font-serif italic">
-            Handcrafted ceramics & bags
-          </p>
-          <p className="text-lg text-dark-teal-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Discover unique, artistic pieces made with love and creativity. 
-            Each piece tells a story of passion and dedication.
-          </p>
+    <div className="min-h-screen bg-brand-dark-teal w-full">
+      {/* Hero Section - Centered like reference */}
+      <section className="relative min-h-screen flex items-center justify-center">
+        <div className="text-center px-4 max-w-6xl mx-auto w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-8"
+          >
+            <BrandLogo size="xl" />
+          </motion.div>
           
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
             <Link 
-              href="/shop" 
-              className="px-8 py-4 bg-vibrant-pink-600 text-creamy-white-50 rounded-full hover:bg-vibrant-pink-700 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              href="/work"
+              className="bg-brand-vibrant-pink text-white px-8 py-3 rounded-full hover:bg-brand-vibrant-pink/90 transition-colors font-brand-bold text-lg"
             >
-              Shop Now
+              View My Work
             </Link>
             <Link 
-              href="/work" 
-              className="px-8 py-4 border-2 border-vibrant-pink-600 text-vibrant-pink-600 rounded-full hover:bg-vibrant-pink-600 hover:text-creamy-white-50 transition-all duration-300 font-medium text-lg"
+              href="/contact"
+              className="bg-transparent text-brand-light-pink border-2 border-brand-light-pink px-8 py-3 rounded-full hover:bg-brand-light-pink hover:text-brand-dark-teal transition-colors font-brand-bold text-lg"
             >
-              View Work
+              Get In Touch
             </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* My Work Section - Horizontal Scrolling Gallery */}
+      <section className="py-32 md:py-40 bg-brand-dark-teal/50 w-full">
+        <div className="container mx-auto px-4 w-full max-w-7xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-brand-bold text-brand-vibrant-pink mb-4">
+              My Work
+            </h2>
+            <p className="text-lg text-brand-light-pink/80 font-brand-elegant">
+              A curated selection of my latest creations
+            </p>
+          </motion.div>
+
+          {/* Horizontal Scrolling Gallery */}
+          <div className="relative">
+            <div className="flex overflow-x-auto scrollbar-hide gap-6 pb-4">
+              {/* Work Items */}
+              {[
+                { title: "Product Design", category: "Design", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&crop=center" },
+                { title: "Print Design", category: "Print", image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop&crop=center" },
+                { title: "Web Design", category: "Web", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&crop=center" },
+                { title: "Animation", category: "Motion", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&h=300&fit=crop&crop=center" },
+                { title: "Mobile Design", category: "Mobile", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop&crop=center" },
+                { title: "Branding", category: "Brand", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&crop=center" },
+                { title: "Illustration", category: "Art", image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop&crop=center" },
+                { title: "Photography", category: "Photo", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&crop=center" }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="flex-shrink-0 w-80 group cursor-pointer"
+                >
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                    <div className="aspect-video relative overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
+                        <h3 className="text-3xl font-extrabold font-brand-bold">{item.title}</h3>
+                        <p className="text-lg text-white/80 font-brand-elegant">{item.category}</p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            
+            {/* See All Button */}
+            <div className="text-center mt-12">
+              <Link 
+                href="/work"
+                className="inline-flex items-center gap-2 bg-brand-vibrant-pink text-white px-6 py-3 rounded-full hover:bg-brand-vibrant-pink/90 transition-colors font-brand-bold"
+              >
+                See all
+                <FaArrowRight className="text-sm" />
+              </Link>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Skills List Section */}
+      <section 
+        className="w-full"
+        style={{ backgroundColor: '#e91e63', paddingTop: '40px', paddingBottom: '40px' }}
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-wrap justify-center items-center gap-x-8 gap-y-2"
+        >
+          {[
+            "graphic design", "illustration", "pottery", "macramé"
+          ].map((tag, index, arr) => (
+            <React.Fragment key={tag}>
+              <span className="text-[#1a4d3a] text-5xl font-bold lowercase tracking-wider">
+                {tag}
+              </span>
+              {index < arr.length - 1 && (
+                <span className="text-[#1a4d3a]/50 text-5xl">•</span>
+              )}
+            </React.Fragment>
+          ))}
         </motion.div>
       </section>
 
-      {/* Animated Photo Grid Section */}
-      <section className="py-20 bg-gradient-to-br from-terracotta-50 to-sage-50">
-        <div className="container mx-auto px-4">
+      {/* CTA Section */}
+      <section className="py-32 md:py-40 bg-gradient-to-br from-brand-dark-teal to-brand-dark-teal/80 w-full">
+        <div className="container mx-auto px-4 text-center w-full max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif text-terracotta-600 mb-4">
-              Creative Process
+            <h2 className="text-4xl font-brand-bold text-brand-light-pink mb-6">
+              Ready to work together?
             </h2>
-            <p className="text-lg text-sage-700 max-w-2xl mx-auto">
-              A glimpse into my artistic journey through dynamic visual storytelling
+            <p className="text-xl text-brand-light-pink/80 font-brand-elegant mb-8 max-w-2xl mx-auto">
+              Let's create something beautiful together. Get in touch to discuss your project.
             </p>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto"
-          >
-            <AnimatedPhotoGrid
-              images={[
-                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop&crop=center",
-                "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=400&fit=crop&crop=center"
-              ]}
-            />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Work Categories Section */}
-      <section className="py-20 bg-creamy-white-100">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-serif text-dark-teal-800 mb-4">
-              My Work
-            </h2>
-            <p className="text-lg text-dark-teal-600 max-w-2xl mx-auto">
-              Explore my creative journey through different mediums and styles
-            </p>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: "Ceramics", description: "Hand-thrown pottery & sculptural pieces", color: "terracotta" },
-              { title: "Handbags", description: "Unique leather & fabric designs", color: "sage" },
-              { title: "Illustration", description: "Digital & traditional artwork", color: "olive" },
-              { title: "Print Design", description: "Custom graphics & branding", color: "beige" },
-              { title: "Textiles", description: "Macramé & fiber art", color: "vibrant-pink" },
-              { title: "Custom Work", description: "Bespoke commissioned pieces", color: "dark-teal" }
-            ].map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className={`bg-${item.color}-50 p-8 rounded-2xl cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 border border-${item.color}-100`}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact"
+                className="bg-brand-vibrant-pink text-white px-8 py-4 rounded-full hover:bg-brand-vibrant-pink/90 transition-colors font-brand-bold text-lg"
               >
-                <h3 className={`text-2xl font-serif text-${item.color}-800 mb-4`}>
-                  {item.title}
-                </h3>
-                <p className={`text-${item.color}-600 leading-relaxed`}>
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h3 className="text-2xl font-serif text-dark-teal-800 mb-8">
-              Skills & Techniques
-            </h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {[
-                "hand-thrown ceramics", "leather working", "macramé", "illustration", 
-                "digital design", "pottery glazing", "pattern making", "textile art"
-              ].map((skill, index) => (
-                <motion.span
-                  key={skill}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="px-4 py-2 bg-vibrant-pink-100 text-vibrant-pink-700 rounded-full text-sm font-medium hover:bg-vibrant-pink-200 transition-colors cursor-pointer"
-                >
-                  {skill}
-                </motion.span>
-              ))}
+                Start a Project
+              </Link>
+              <Link 
+                href="/about"
+                className="bg-transparent text-brand-light-pink border-2 border-brand-light-pink px-8 py-4 rounded-full hover:bg-brand-light-pink hover:text-brand-dark-teal transition-colors font-brand-bold text-lg"
+              >
+                Learn More
+              </Link>
             </div>
           </motion.div>
         </div>

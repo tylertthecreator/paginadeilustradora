@@ -7,7 +7,7 @@ import { FaPalette, FaHeart, FaLeaf } from "react-icons/fa";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-brand-dark-teal">
       <div className="container mx-auto px-4 py-16">
         {/* Hero Section */}
         <motion.div
@@ -16,10 +16,10 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-serif text-terracotta-600 mb-6">
+          <h1 className="text-5xl md:text-6xl font-brand-bold text-brand-light-pink mb-6">
             About Me
           </h1>
-          <p className="text-xl text-sage-700 max-w-3xl mx-auto">
+          <p className="text-xl text-brand-light-pink/80 max-w-3xl mx-auto font-brand-elegant">
             Welcome to my creative world where ceramics and handbags come together in perfect harmony
           </p>
         </motion.div>
@@ -33,12 +33,12 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-16"
           >
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-terracotta-100">
-              <h2 className="text-3xl font-serif text-terracotta-600 mb-6 flex items-center gap-3">
-                <FaPalette className="text-olive-600" />
+            <div className="bg-brand-dark-teal/40 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-brand-vibrant-pink/30">
+              <h2 className="text-3xl font-brand-bold text-brand-light-pink mb-6 flex items-center gap-3">
+                <FaPalette className="text-brand-vibrant-pink" />
                 My Creative Journey
               </h2>
-              <div className="prose prose-lg max-w-none text-sage-700">
+              <div className="prose prose-lg max-w-none text-brand-light-pink/80 font-brand-elegant">
                 <p className="mb-6">
                   My name is Toska, and I'm a passionate artist who finds joy in creating beautiful, 
                   functional pieces that bring warmth and character to everyday life. My journey began 
@@ -68,23 +68,23 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mb-16"
           >
-            <div className="bg-sage-50 rounded-2xl p-8 border border-sage-200">
-              <h2 className="text-3xl font-serif text-terracotta-600 mb-6 flex items-center gap-3">
-                <FaHeart className="text-terracotta-500" />
+            <div className="bg-brand-dark-teal/30 backdrop-blur-sm rounded-2xl p-8 border border-brand-vibrant-pink/20">
+              <h2 className="text-3xl font-brand-bold text-brand-light-pink mb-6 flex items-center gap-3">
+                <FaHeart className="text-brand-vibrant-pink" />
                 My Philosophy
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-xl font-semibold text-sage-800 mb-4">Sustainable Craft</h3>
-                  <p className="text-sage-700 mb-6">
+                  <h3 className="text-xl font-brand-bold text-brand-light-pink mb-4">Sustainable Craft</h3>
+                  <p className="text-brand-light-pink/80 mb-6 font-brand-elegant">
                     I'm committed to sustainable practices, using locally sourced materials 
                     whenever possible and creating pieces that are built to last. Every item 
                     is designed to age gracefully and become more beautiful with time.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-sage-800 mb-4">Handmade Quality</h3>
-                  <p className="text-sage-700 mb-6">
+                  <h3 className="text-xl font-brand-bold text-brand-light-pink mb-4">Handmade Quality</h3>
+                  <p className="text-brand-light-pink/80 mb-6 font-brand-elegant">
                     Each piece is individually crafted by hand, ensuring that no two items 
                     are exactly alike. This uniqueness is what makes handmade art special – 
                     it carries the energy and intention of its maker.
@@ -101,36 +101,36 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mb-16"
           >
-            <div className="bg-beige-50 rounded-2xl p-8 border border-beige-200">
-              <h2 className="text-3xl font-serif text-terracotta-600 mb-6 flex items-center gap-3">
-                <FaLeaf className="text-olive-600" />
+            <div className="bg-brand-dark-teal/20 backdrop-blur-sm rounded-2xl p-8 border border-brand-vibrant-pink/20">
+              <h2 className="text-3xl font-brand-bold text-brand-light-pink mb-6 flex items-center gap-3">
+                <FaLeaf className="text-brand-vibrant-pink" />
                 My Process
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-terracotta-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-bold text-terracotta-600">1</span>
+                  <div className="w-16 h-16 bg-brand-vibrant-pink/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-brand-vibrant-pink/40">
+                    <span className="text-2xl font-bold text-brand-light-pink">1</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-sage-800 mb-2">Inspiration</h3>
-                  <p className="text-sage-700 text-sm">
+                  <h3 className="text-lg font-brand-bold text-brand-light-pink mb-2">Inspiration</h3>
+                  <p className="text-brand-light-pink/80 text-sm font-brand-elegant">
                     I draw inspiration from nature, textures, and the simple beauty of everyday moments.
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-olive-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-bold text-olive-600">2</span>
+                  <div className="w-16 h-16 bg-brand-vibrant-pink/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-brand-vibrant-pink/40">
+                    <span className="text-2xl font-bold text-brand-light-pink">2</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-sage-800 mb-2">Creation</h3>
-                  <p className="text-sage-700 text-sm">
+                  <h3 className="text-lg font-brand-bold text-brand-light-pink mb-2">Creation</h3>
+                  <p className="text-brand-light-pink/80 text-sm font-brand-elegant">
                     Each piece is carefully handcrafted with attention to detail and quality.
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-bold text-sage-600">3</span>
+                  <div className="w-16 h-16 bg-brand-vibrant-pink/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-brand-vibrant-pink/40">
+                    <span className="text-2xl font-bold text-brand-light-pink">3</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-sage-800 mb-2">Connection</h3>
-                  <p className="text-sage-700 text-sm">
+                  <h3 className="text-lg font-brand-bold text-brand-light-pink mb-2">Connection</h3>
+                  <p className="text-brand-light-pink/80 text-sm font-brand-elegant">
                     I hope each piece brings joy and becomes a cherished part of your daily life.
                   </p>
                 </div>
@@ -145,24 +145,24 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-center"
           >
-            <div className="bg-gradient-to-r from-terracotta-50 to-sage-50 rounded-2xl p-8 border border-terracotta-200">
-              <h2 className="text-2xl font-serif text-terracotta-600 mb-4">
+            <div className="bg-gradient-to-r from-brand-dark-teal/40 to-brand-dark-teal/60 rounded-2xl p-8 border border-brand-vibrant-pink/30">
+              <h2 className="text-2xl font-brand-bold text-brand-light-pink mb-4">
                 Let's Create Together
               </h2>
-              <p className="text-sage-700 mb-6 max-w-2xl mx-auto">
+              <p className="text-brand-light-pink/80 mb-6 max-w-2xl mx-auto font-brand-elegant">
                 I'd love to hear from you! Whether you're interested in a custom piece, 
                 have questions about my work, or just want to say hello, I'm always happy to connect.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/work"
-                  className="bg-terracotta-600 text-white px-8 py-3 rounded-full hover:bg-terracotta-700 transition-colors font-medium"
+                  className="bg-brand-vibrant-pink text-white px-8 py-3 rounded-full hover:bg-brand-vibrant-pink/90 transition-colors font-brand-bold"
                 >
                   View My Work
                 </a>
                 <a
                   href="/contact"
-                  className="bg-sage-600 text-white px-8 py-3 rounded-full hover:bg-sage-700 transition-colors font-medium"
+                  className="bg-brand-dark-teal/60 text-brand-light-pink px-8 py-3 rounded-full hover:bg-brand-dark-teal/80 transition-colors font-brand-bold border border-brand-vibrant-pink/50"
                 >
                   Get In Touch
                 </a>

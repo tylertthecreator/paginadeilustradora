@@ -61,7 +61,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-brand-dark-teal">
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <motion.div
@@ -70,10 +70,10 @@ export default function ContactPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-serif text-terracotta-600 mb-6">
+          <h1 className="text-5xl md:text-6xl font-brand-bold text-brand-light-pink mb-6">
             Contact Me
           </h1>
-          <p className="text-xl text-sage-700 max-w-3xl mx-auto">
+          <p className="text-xl text-brand-light-pink/80 max-w-3xl mx-auto font-brand-elegant">
             I'd love to hear from you! Whether you have questions about my work, 
             want to discuss a custom order, or just want to say hello.
           </p>
@@ -87,15 +87,15 @@ export default function ContactPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-terracotta-100">
-                <h2 className="text-2xl font-serif text-terracotta-600 mb-6">
+              <div className="bg-brand-dark-teal/40 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-brand-vibrant-pink/30">
+                <h2 className="text-2xl font-brand-bold text-brand-light-pink mb-6">
                   Send Me a Message
                 </h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-sage-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-brand-light-pink mb-2 font-brand-bold">
                         Name *
                       </label>
                       <input
@@ -105,12 +105,12 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-sage-200 rounded-lg focus:ring-2 focus:ring-terracotta-500 focus:border-transparent transition-colors"
+                        className="w-full px-4 py-3 border border-brand-vibrant-pink/30 rounded-lg focus:ring-2 focus:ring-brand-vibrant-pink focus:border-transparent transition-colors bg-brand-dark-teal/20 text-brand-light-pink placeholder-brand-light-pink/60"
                         placeholder="Your name"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-sage-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-brand-light-pink mb-2 font-brand-bold">
                         Email *
                       </label>
                       <input
@@ -120,7 +120,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-sage-200 rounded-lg focus:ring-2 focus:ring-terracotta-500 focus:border-transparent transition-colors"
+                        className="w-full px-4 py-3 border border-brand-vibrant-pink/30 rounded-lg focus:ring-2 focus:ring-brand-vibrant-pink focus:border-transparent transition-colors bg-brand-dark-teal/20 text-brand-light-pink placeholder-brand-light-pink/60"
                         placeholder="your@email.com"
                       />
                     </div>

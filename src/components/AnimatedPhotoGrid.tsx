@@ -51,8 +51,6 @@ export default function AnimatedPhotoGrid({ images, className = "" }: PhotoGridP
       {/* Animated Images */}
       <div className="absolute inset-0 grid grid-cols-4 grid-rows-4 gap-1">
         {images.slice(0, 16).map((image, index) => {
-          const row = Math.floor(index / 4);
-          const col = index % 4;
           const isActive = index === currentImageIndex;
           
           return (

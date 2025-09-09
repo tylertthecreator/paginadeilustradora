@@ -11,19 +11,27 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        
+        // Brand Colors from Logo Identity
+        'brand': {
+          'dark-teal': '#1a4d3a',
+          'vibrant-pink': '#e91e63',
+          'light-pink': '#f8bbd9',
+        },
+        
         // Reference color palette from design
         'dark-teal': {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
+          50: '#f0f9f7',
+          100: '#e0f2ed',
+          200: '#bae6d6',
+          300: '#7dd3b8',
           400: '#38bdf8',
           500: '#0ea5e9',
           600: '#0284c7',
           700: '#0369a1',
           800: '#075985',
-          900: '#0c4a6e',
-          950: '#082f49',
+          900: '#1a4d3a', // Updated to match brand
+          950: '#0f2e1f',
         },
         'vibrant-pink': {
           50: '#fdf2f8',
@@ -31,7 +39,7 @@ const config: Config = {
           200: '#fbcfe8',
           300: '#f9a8d4',
           400: '#f472b6',
-          500: '#ec4899',
+          500: '#e91e63', // Updated to match brand
           600: '#db2777',
           700: '#be185d',
           800: '#9d174d',
@@ -118,6 +126,11 @@ const config: Config = {
         serif: ['Playfair Display', 'serif'],
         mono: ['JetBrains Mono', 'monospace'],
         handwritten: ['Kalam', 'cursive'],
+        // Brand fonts from logo identity
+        'brand-bold': ['Oswald', 'sans-serif'], // For "TOSKA" - bold, wide uppercase
+        'brand-condensed': ['Oswald', 'sans-serif'], // For "ART PROJECT" - condensed uppercase
+        'brand-elegant': ['Crimson Text', 'serif'], // For "illustration" - classic serif
+        'brand-logo': ['Playfair Display', 'serif'], // For stylized 't' - decorative serif
       },
       spacing: {
         '18': '4.5rem',

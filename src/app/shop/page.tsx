@@ -5,7 +5,7 @@ import { FaEtsy, FaShoppingBag, FaHeart, FaStar, FaArrowRight } from "react-icon
 
 export default function ShopPage() {
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-brand-dark-teal">
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <motion.div
@@ -14,10 +14,10 @@ export default function ShopPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-serif text-terracotta-600 mb-6">
+          <h1 className="text-5xl md:text-6xl font-brand-bold text-brand-light-pink mb-6">
             Shop
           </h1>
-          <p className="text-xl text-sage-700 max-w-3xl mx-auto">
+          <p className="text-xl text-brand-light-pink/80 max-w-3xl mx-auto font-brand-elegant">
             Discover my latest creations and find the perfect piece to add to your collection
           </p>
         </motion.div>
