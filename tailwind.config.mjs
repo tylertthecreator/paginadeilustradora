@@ -11,6 +11,7 @@ const config = {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
         
+<<<<<<< HEAD:tailwind.config.mjs
         // Brand Colors from PDF Reference
         'brand': {
           'dark-teal': 'var(--brand-dark-teal)',
@@ -20,6 +21,13 @@ const config = {
           'light-pink': 'var(--brand-light-pink)',
           'cream': 'var(--brand-cream)',
           'light-text': 'var(--brand-light-text)',
+=======
+        // Brand Colors from Logo Identity
+        'brand': {
+          'dark-teal': '#1a4d3a',
+          'vibrant-pink': '#e91e63',
+          'light-pink': '#f8bbd9',
+>>>>>>> f42d27adb31722162cba6080e3a97ecd433730e7:tailwind.config.ts
         },
         
         // Reference color palette from design
@@ -42,7 +50,11 @@ const config = {
           200: '#fbcfe8',
           300: '#f9a8d4',
           400: '#f472b6',
+<<<<<<< HEAD:tailwind.config.mjs
           500: '#FF8A9D', // Updated to match brand
+=======
+          500: '#e91e63', // Updated to match brand
+>>>>>>> f42d27adb31722162cba6080e3a97ecd433730e7:tailwind.config.ts
           600: '#db2777',
           700: '#be185d',
           800: '#9d174d',
