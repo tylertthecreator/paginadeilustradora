@@ -5,11 +5,8 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import WorkGallery from "./WorkGallery";
 import { artwork } from "@/data/artwork";
-<<<<<<< HEAD
 
 /* eslint-disable react/no-unescaped-entities */
-=======
->>>>>>> f42d27adb31722162cba6080e3a97ecd433730e7
 
 export default function WorkPage() {
   return (

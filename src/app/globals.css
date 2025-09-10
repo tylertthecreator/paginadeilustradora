@@ -4,7 +4,6 @@
 @import "tailwindcss";
 
 :root {
-<<<<<<< HEAD
   /* New Brand Colors from PDF Reference */
   --brand-dark-teal: #1a4d3a;
   --brand-primary-pink: #d193a1; /* Main accent pink for text/logos */
@@ -13,25 +12,6 @@
   --brand-light-pink: #f8d7da; /* Light pink for backgrounds and subtle elements */
   --brand-cream: #f5efe1; /* Cream for buttons and highlights */
   --brand-light-text: #fdfbf7; /* A slightly off-white for text on dark backgrounds */
-=======
-  --background: #fefefe; /* creamy-white-50 */
-  --foreground: #0c4a6e; /* dark-teal-900 */
-  
-  /* Brand Colors from Logo */
-  --brand-dark-teal: #1a4d3a; /* Deep forest green from background */
-  --brand-vibrant-pink: #e91e63; /* Bright fuchsia from logo */
-  --brand-light-pink: #f8bbd9; /* Light pink/cream from secondary text */
-  
-  /* Existing palette */
-  --vibrant-pink: #e91e63;
-  --dark-teal: #1a4d3a;
-  --creamy-white: #fefefe;
-  --terracotta: #e91e63;
-  --beige: #e8ccad;
-  --olive: #afb964;
-  --sage: #a5b491;
-  --cream: #f5f5f5;
->>>>>>> f42d27adb31722162cba6080e3a97ecd433730e7
 }
 
 
@@ -52,11 +32,7 @@ html {
 
 body {
   background: var(--brand-dark-teal);
-<<<<<<< HEAD
   color: var(--brand-light-text);
-=======
-  color: var(--brand-light-pink);
->>>>>>> f42d27adb31722162cba6080e3a97ecd433730e7
   font-family: var(--font-sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -209,11 +185,7 @@ button, a, input, textarea, select {
 
 /* Text gradient effect */
 .text-gradient {
-<<<<<<< HEAD
   background: linear-gradient(135deg, var(--brand-vibrant-pink), var(--brand-primary-pink));
-=======
-  background: linear-gradient(135deg, var(--terracotta), var(--sage));
->>>>>>> f42d27adb31722162cba6080e3a97ecd433730e7
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -221,13 +193,8 @@ button, a, input, textarea, select {
 
 /* Loading spinner */
 .spinner {
-<<<<<<< HEAD
   border: 3px solid var(--brand-cream);
   border-top: 3px solid var(--brand-vibrant-pink);
-=======
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid var(--terracotta);
->>>>>>> f42d27adb31722162cba6080e3a97ecd433730e7
   border-radius: 50%;
   width: 40px;
   height: 40px;

@@ -1,18 +1,4 @@
-<<<<<<< HEAD
 import { Artwork } from '@/types/artwork';
-=======
-export interface Artwork {
-  id: number;
-  title: string;
-  description: string;
-  category: 'ceramics' | 'bags';
-  imageSrc: string;
-  price: string;
-  dimensions: string;
-  materials: string;
-  featured: boolean;
-}
->>>>>>> f42d27adb31722162cba6080e3a97ecd433730e7
 
 export const artwork: Artwork[] = [
   {
