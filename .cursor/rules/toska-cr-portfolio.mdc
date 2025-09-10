@@ -1,0 +1,72 @@
+---
+description: Design system and development guidelines for the Toska CR portfolio project.
+globs: ["src/**"]
+alwaysApply: true
+---
+
+# Toska CR Portfolio - Project Guidelines
+
+This document outlines the core design decisions, architectural patterns, and development workflow for the Toska CR portfolio website. These rules ensure consistency and quality in all future development.
+
+## Core Directives for AI Collaboration
+
+These are the high-level principles that guide the AI assistant's work on this project:
+
+-   **Always Verify**: After any change, check the terminal console for new errors or warnings. If any are found, they must be fixed immediately.
+-   **Prioritize Consistency**: Ensure all new code and styling matches the established patterns defined in these rules.
+-   **Minimal & Precise Changes**: Opt for the smallest, most targeted change possible to achieve the goal. Avoid major refactoring unless it is the only viable solution and has been discussed first.
+
+---
+
+## 1. Brand Identity & Color Palette
+
+The brand's aesthetic is defined by a specific color palette. These colors must be used consistently across the application.
+
+-   **Primary Background**: Dark Teal/Green (`#0f2e1f` or `bg-brand-dark-teal`). Used for the Header, Footer, and the Hero section.
+-   **Primary Accent**: Vibrant Pink (`#FF8A9D` or `text-brand-vibrant-pink`). Used for key text elements like navigation links, titles ("My Work"), and important accents.
+-   **Secondary Accent**: Cream (`#f5efe1` or `bg-brand-cream`). Used for specific UI elements like the "See All" button background and the text in the Skills section.
+-   **Skills Section Background**: The Skills section uses the vibrant pink (`#FF8A9D`) as its background color.
+
+---
+
+## 2. Typography System
+
+Consistent typography is crucial for the brand's feel.
+
+-   **Primary Fonts**: The preferred font families are **Mencken** and **Temeraire**.
+-   **Header Navigation**: Font size must be `20px` and `bold`.
+-   **"My Work" Title**: Font size must be `60px` and `bold`.
+-   **Skills Section Text**: Font size must be `40px` and `bold`.
+
+---
+
+## 3. Layout & Spacing
+
+A spacious, edge-to-edge layout is a core design principle.
+
+-   **Edge-to-Edge Layout**: Primary sections like the Header, Footer, and Skills section should span the full width of the viewport.
+-   **Consistent Padding**:
+    -   **Header & Footer**: Must have `40px` of horizontal padding on the left and right edges.
+    -   **Skills Section**: Must have `30px` of horizontal padding.
+
+---
+
+## 4. Component-Specific Styles
+
+Key components have very specific styling rules that must be maintained.
+
+-   **Header**:
+    -   The `BrandLogo` component must be used in its icon-only form (`showText={false}`).
+    -   The `ShoppingBagIcon` must be visually larger to balance the layout.
+    -   Navigation links must be right-aligned with `60px` of space separating them from the shopping icon.
+-   **Footer**:
+    -   Must have a dark green background (`#0f2e1f`) and pink text for links and social icons.
+-   **Interactive Carousel**:
+    -   This component is the standard for horizontally scrolling image galleries.
+
+---
+
+## 5. Technical Patterns
+
+-   **Client vs. Server Components**: Use the `'use client';` directive for components that require React hooks (e.g., `useState`, `useEffect`). Keep components that are primarily for layout or need to export metadata as Server Components.
+-   **Git Repository**: The official remote for this project is `https://github.com/tylertthecreator/paginadeilustradora.git`.
