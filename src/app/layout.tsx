@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
+import { Inter, Playfair_Display, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import PageTransition from "@/components/PageTransition";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -15,12 +16,14 @@ const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains",
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://toskacr.com'),
   title: {
     default: "Toska CR - Handcrafted Ceramics & Artisan Bags",
     template: "%s | Toska CR"
@@ -68,14 +71,15 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
     creator: "@toskacr",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
   verification: {
     google: "your-google-verification-code",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -86,12 +90,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${playfairDisplay.variable} ${jetbrainsMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${inter.variable} ${playfairDisplay.variable} ${cormorantGaramond.variable} antialiased min-h-screen flex flex-col`}
       >
         <ErrorBoundary>
           <Header />
           <main className="flex-1">
-            {children}
+            <PageTransition>
+              {children}
+            </PageTransition>
           </main>
           <Footer />
         </ErrorBoundary>

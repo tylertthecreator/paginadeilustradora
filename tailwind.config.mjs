@@ -1,6 +1,5 @@
-import type { Config } from 'tailwindcss'
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+const config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -11,19 +10,31 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        
+        // Brand Colors from PDF Reference
+        'brand': {
+          'dark-teal': 'var(--brand-dark-teal)',
+          'primary-pink': 'var(--brand-primary-pink)',
+          'secondary-pink': 'var(--brand-secondary-pink)',
+          'vibrant-pink': 'var(--brand-vibrant-pink)',
+          'light-pink': 'var(--brand-light-pink)',
+          'cream': 'var(--brand-cream)',
+          'light-text': 'var(--brand-light-text)',
+        },
+        
         // Reference color palette from design
         'dark-teal': {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
+          50: '#f0f9f7',
+          100: '#e0f2ed',
+          200: '#bae6d6',
+          300: '#7dd3b8',
           400: '#38bdf8',
           500: '#0ea5e9',
           600: '#0284c7',
           700: '#0369a1',
           800: '#075985',
-          900: '#0c4a6e',
-          950: '#082f49',
+          900: '#1a4d3a', // Updated to match brand
+          950: '#0f2e1f',
         },
         'vibrant-pink': {
           50: '#fdf2f8',
@@ -31,7 +42,7 @@ const config: Config = {
           200: '#fbcfe8',
           300: '#f9a8d4',
           400: '#f472b6',
-          500: '#ec4899',
+          500: '#FF8A9D', // Updated to match brand
           600: '#db2777',
           700: '#be185d',
           800: '#9d174d',
@@ -115,9 +126,15 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        serif: ['Temeraire', 'Playfair Display', 'serif'],
+        'brand-heading': ['Mencken', 'serif'],
         mono: ['JetBrains Mono', 'monospace'],
         handwritten: ['Kalam', 'cursive'],
+        // Brand fonts from logo identity
+        'brand-bold': ['Oswald', 'sans-serif'], // For "TOSKA" - bold, wide uppercase
+        'brand-condensed': ['Oswald', 'sans-serif'], // For "ART PROJECT" - condensed uppercase
+        'brand-elegant': ['Crimson Text', 'serif'], // For "illustration" - classic serif
+        'brand-logo': ['Playfair Display', 'serif'], // For stylized 't' - decorative serif
       },
       spacing: {
         '18': '4.5rem',
@@ -128,6 +145,7 @@ const config: Config = {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
         'bounce-gentle': 'bounceGentle 2s infinite',
+        marquee: 'marquee linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -141,6 +159,10 @@ const config: Config = {
         bounceGentle: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },

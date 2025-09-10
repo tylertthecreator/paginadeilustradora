@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "Terracotta Vase",
+    "category": "ceramics",
+    "image": "https://picsum.photos/seed/vase/400/400",
+    "alt": "A handcrafted terracotta vase",
+    "description": "A beautiful vase made from rich terracotta clay, perfect for holding your favorite flowers."
+  },
+  {
+    "id": 2,
+    "title": "Canvas Tote Bag",
+    "category": "bags",
+    "image": "https://picsum.photos/seed/tote/400/400",
+    "alt": "A stylish canvas tote bag",
+    "description": "A durable and stylish canvas tote bag, perfect for everyday use."
+  },
+  {
+    "id": 3,
+    "title": "Glazed Bowl Set",
+    "category": "ceramics",
+    "image": "https://picsum.photos/seed/bowls/400/400",
+    "alt": "A set of glazed ceramic bowls",
+    "description": "A set of three handcrafted ceramic bowls with a beautiful glaze finish."
+  },
+  {
+    "id": 4,
+    "title": "Leather Crossbody",
+    "category": "bags",
+    "image": "https://picsum.photos/seed/crossbody/400/400",
+    "alt": "A leather crossbody bag",
+    "description": "A stylish and functional leather crossbody bag, perfect for a night out."
+  },
+  {
+    "id": 5,
+    "title": "Earthenware Mug",
+    "category": "ceramics",
+    "image": "https://picsum.photos/seed/mug/400/400",
+    "alt": "A rustic earthenware mug",
+    "description": "A rustic earthenware mug, perfect for your morning coffee or tea."
+  },
+  {
+    "id": 6,
+    "title": "Woven Backpack",
+    "category": "bags",
+    "image": "https://picsum.photos/seed/backpack/400/400",
+    "alt": "A woven backpack",
+    "description": "A beautiful and spacious woven backpack, perfect for your next adventure."
+  },
+  {
+    "id": 7,
+    "title": "Ceramic Plate",
+    "category": "ceramics",
+    "image": "https://picsum.photos/seed/plate/400/400",
+    "alt": "A handcrafted ceramic plate",
+    "description": "A beautiful ceramic plate with intricate patterns, perfect for serving meals."
+  },
+  {
+    "id": 8,
+    "title": "Leather Handbag",
+    "category": "bags",
+    "image": "https://picsum.photos/seed/handbag/400/400",
+    "alt": "A elegant leather handbag",
+    "description": "An elegant leather handbag, perfect for special occasions."
+  },
+  {
+    "id": 9,
+    "title": "Pottery Jar",
+    "category": "ceramics",
+    "image": "https://picsum.photos/seed/jar/400/400",
+    "alt": "A traditional pottery jar",
+    "description": "A traditional pottery jar with beautiful glazing, perfect for storage."
+  },
+  {
+    "id": 10,
+    "title": "Canvas Shoulder Bag",
+    "category": "bags",
+    "image": "https://picsum.photos/seed/shoulder/400/400",
+    "alt": "A comfortable canvas shoulder bag",
+    "description": "A comfortable canvas shoulder bag, perfect for daily use."
+  },
+  {
+    "id": 11,
+    "title": "Ceramic Teapot",
+    "category": "ceramics",
+    "image": "https://picsum.photos/seed/teapot/400/400",
+    "alt": "A delicate ceramic teapot",
+    "description": "A delicate ceramic teapot with beautiful craftsmanship."
+  },
+  {
+    "id": 12,
+    "title": "Leather Wallet",
+    "category": "bags",
+    "image": "https://picsum.photos/seed/wallet/400/400",
+    "alt": "A premium leather wallet",
+    "description": "A premium leather wallet with excellent craftsmanship."
+  }
+]

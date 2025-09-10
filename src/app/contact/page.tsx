@@ -5,6 +5,8 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaInstagram, FaPinterest, FaLinked
 import { useState, useEffect } from "react";
 import emailjs from '@emailjs/browser';
 
+/* eslint-disable react/no-unescaped-entities */
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -61,7 +63,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-brand-dark-teal">
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <motion.div
@@ -70,10 +72,10 @@ export default function ContactPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-serif text-terracotta-600 mb-6">
+          <h1 className="text-5xl md:text-6xl font-brand-bold text-brand-light-pink mb-6">
             Contact Me
           </h1>
-          <p className="text-xl text-sage-700 max-w-3xl mx-auto">
+          <p className="text-xl text-brand-light-pink/80 max-w-3xl mx-auto font-brand-elegant">
             I'd love to hear from you! Whether you have questions about my work, 
             want to discuss a custom order, or just want to say hello.
           </p>
@@ -87,15 +89,15 @@ export default function ContactPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-terracotta-100">
-                <h2 className="text-2xl font-serif text-terracotta-600 mb-6">
+              <div className="bg-brand-dark-teal/40 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-brand-vibrant-pink/30">
+                <h2 className="text-2xl font-brand-bold text-brand-light-pink mb-6">
                   Send Me a Message
                 </h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-sage-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-brand-light-pink mb-2 font-brand-bold">
                         Name *
                       </label>
                       <input
@@ -105,12 +107,12 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-sage-200 rounded-lg focus:ring-2 focus:ring-terracotta-500 focus:border-transparent transition-colors"
+                        className="w-full px-4 py-3 border border-brand-vibrant-pink/30 rounded-lg focus:ring-2 focus:ring-brand-vibrant-pink focus:border-transparent transition-colors bg-brand-dark-teal/20 text-brand-light-pink placeholder-brand-light-pink/60"
                         placeholder="Your name"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-sage-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-brand-light-pink mb-2 font-brand-bold">
                         Email *
                       </label>
                       <input
@@ -120,14 +122,14 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-sage-200 rounded-lg focus:ring-2 focus:ring-terracotta-500 focus:border-transparent transition-colors"
+                        className="w-full px-4 py-3 border border-brand-vibrant-pink/30 rounded-lg focus:ring-2 focus:ring-brand-vibrant-pink focus:border-transparent transition-colors bg-brand-dark-teal/20 text-brand-light-pink placeholder-brand-light-pink/60"
                         placeholder="your@email.com"
                       />
                     </div>
                   </div>
                   
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-sage-700 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-brand-light-pink mb-2 font-brand-bold">
                       Subject *
                     </label>
                     <input
@@ -137,13 +139,13 @@ export default function ContactPage() {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-sage-200 rounded-lg focus:ring-2 focus:ring-terracotta-500 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-brand-vibrant-pink/30 rounded-lg focus:ring-2 focus:ring-brand-vibrant-pink focus:border-transparent transition-colors bg-brand-dark-teal/20 text-brand-light-pink placeholder-brand-light-pink/60"
                       placeholder="What's this about?"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-sage-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-brand-light-pink mb-2 font-brand-bold">
                       Message *
                     </label>
                     <textarea
@@ -153,7 +155,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 border border-sage-200 rounded-lg focus:ring-2 focus:ring-terracotta-500 focus:border-transparent transition-colors resize-none"
+                      className="w-full px-4 py-3 border border-brand-vibrant-pink/30 rounded-lg focus:ring-2 focus:ring-brand-vibrant-pink focus:border-transparent transition-colors resize-none bg-brand-dark-teal/20 text-brand-light-pink placeholder-brand-light-pink/60"
                       placeholder="Tell me about your project, question, or just say hello..."
                     />
                   </div>
@@ -161,10 +163,10 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full py-3 px-6 rounded-lg font-medium text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
+                    className={`w-full py-3 px-6 rounded-lg font-brand-bold text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
                       isSubmitting
-                        ? 'bg-terracotta-400 cursor-not-allowed'
-                        : 'bg-terracotta-600 hover:bg-terracotta-700'
+                        ? 'bg-brand-vibrant-pink/50 cursor-not-allowed text-brand-light-pink/60'
+                        : 'bg-brand-vibrant-pink hover:bg-brand-vibrant-pink/90 text-white'
                     }`}
                   >
                     {isSubmitting ? (
@@ -182,9 +184,9 @@ export default function ContactPage() {
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-2 text-green-700"
+                      className="mt-4 p-4 bg-brand-light-pink/20 border border-brand-vibrant-pink/30 rounded-lg flex items-center gap-2 text-brand-vibrant-pink"
                     >
-                      <FaCheck className="text-green-600" />
+                      <FaCheck className="text-brand-vibrant-pink" />
                       Thank you! Your message has been sent successfully. I'll get back to you soon.
                     </motion.div>
                   )}
@@ -210,54 +212,54 @@ export default function ContactPage() {
               className="space-y-8"
             >
               {/* Contact Information */}
-              <div className="bg-sage-50 rounded-2xl p-8 border border-sage-200">
-                <h2 className="text-2xl font-serif text-terracotta-600 mb-6">
+              <div className="bg-brand-dark-teal/40 backdrop-blur-sm rounded-2xl p-8 border border-brand-vibrant-pink/30">
+                <h2 className="text-2xl font-brand-bold text-brand-light-pink mb-6">
                   Get in Touch
                 </h2>
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-terracotta-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <FaEnvelope className="text-terracotta-600 text-xl" />
+                    <div className="w-12 h-12 bg-brand-vibrant-pink/20 rounded-full flex items-center justify-center flex-shrink-0 border border-brand-vibrant-pink/40">
+                      <FaEnvelope className="text-brand-vibrant-pink text-xl" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-sage-800 mb-1">Email</h3>
-                      <p className="text-sage-600">hello@toskacr.com</p>
-                      <p className="text-sm text-sage-500">I typically respond within 24 hours</p>
+                      <h3 className="font-brand-bold text-brand-light-pink mb-1">Email</h3>
+                      <p className="text-brand-light-pink/80">hello@toskacr.com</p>
+                      <p className="text-sm text-brand-light-pink/60 font-brand-elegant">I typically respond within 24 hours</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-olive-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <FaPhone className="text-olive-600 text-xl" />
+                    <div className="w-12 h-12 bg-brand-vibrant-pink/20 rounded-full flex items-center justify-center flex-shrink-0 border border-brand-vibrant-pink/40">
+                      <FaPhone className="text-brand-vibrant-pink text-xl" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-sage-800 mb-1">Phone</h3>
-                      <p className="text-sage-600">+1 (555) 123-4567</p>
-                      <p className="text-sm text-sage-500">Mon-Fri, 9am-5pm EST</p>
+                      <h3 className="font-brand-bold text-brand-light-pink mb-1">Phone</h3>
+                      <p className="text-brand-light-pink/80">+1 (555) 123-4567</p>
+                      <p className="text-sm text-brand-light-pink/60 font-brand-elegant">Mon-Fri, 9am-5pm EST</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <FaMapMarkerAlt className="text-sage-600 text-xl" />
+                    <div className="w-12 h-12 bg-brand-vibrant-pink/20 rounded-full flex items-center justify-center flex-shrink-0 border border-brand-vibrant-pink/40">
+                      <FaMapMarkerAlt className="text-brand-vibrant-pink text-xl" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-sage-800 mb-1">Location</h3>
-                      <p className="text-sage-600">Portland, Oregon</p>
-                      <p className="text-sm text-sage-500">Available for local pickup</p>
+                      <h3 className="font-brand-bold text-brand-light-pink mb-1">Location</h3>
+                      <p className="text-brand-light-pink/80">Portland, Oregon</p>
+                      <p className="text-sm text-brand-light-pink/60 font-brand-elegant">Available for local pickup</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Social Media */}
-              <div className="bg-beige-50 rounded-2xl p-8 border border-beige-200">
-                <h2 className="text-2xl font-serif text-terracotta-600 mb-6">
+              <div className="bg-brand-dark-teal/30 backdrop-blur-sm rounded-2xl p-8 border border-brand-vibrant-pink/20">
+                <h2 className="text-2xl font-brand-bold text-brand-light-pink mb-6">
                   Follow My Journey
                 </h2>
                 
-                <p className="text-sage-700 mb-6">
+                <p className="text-brand-light-pink/80 mb-6 font-brand-elegant">
                   Stay updated with my latest creations, behind-the-scenes content, 
                   and creative process on social media.
                 </p>
@@ -267,74 +269,74 @@ export default function ContactPage() {
                     href="https://instagram.com/toskacr"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-terracotta-50 transition-colors border border-terracotta-100"
+                    className="flex items-center gap-3 p-4 bg-brand-dark-teal/20 rounded-lg hover:bg-brand-vibrant-pink/20 transition-colors border border-brand-vibrant-pink/30"
                   >
-                    <FaInstagram className="text-terracotta-600 text-xl" />
-                    <span className="font-medium text-sage-700">Instagram</span>
+                    <FaInstagram className="text-brand-vibrant-pink text-xl" />
+                    <span className="font-brand-bold text-brand-light-pink">Instagram</span>
                   </a>
                   
                   <a
                     href="https://pinterest.com/toskacr"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-terracotta-50 transition-colors border border-terracotta-100"
+                    className="flex items-center gap-3 p-4 bg-brand-dark-teal/20 rounded-lg hover:bg-brand-vibrant-pink/20 transition-colors border border-brand-vibrant-pink/30"
                   >
-                    <FaPinterest className="text-terracotta-600 text-xl" />
-                    <span className="font-medium text-sage-700">Pinterest</span>
+                    <FaPinterest className="text-brand-vibrant-pink text-xl" />
+                    <span className="font-brand-bold text-brand-light-pink">Pinterest</span>
                   </a>
                   
                   <a
                     href="https://linkedin.com/in/toskacr"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-terracotta-50 transition-colors border border-terracotta-100"
+                    className="flex items-center gap-3 p-4 bg-brand-dark-teal/20 rounded-lg hover:bg-brand-vibrant-pink/20 transition-colors border border-brand-vibrant-pink/30"
                   >
-                    <FaLinkedin className="text-terracotta-600 text-xl" />
-                    <span className="font-medium text-sage-700">LinkedIn</span>
+                    <FaLinkedin className="text-brand-vibrant-pink text-xl" />
+                    <span className="font-brand-bold text-brand-light-pink">LinkedIn</span>
                   </a>
                   
                   <a
                     href="https://etsy.com/shop/toskacr"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-terracotta-50 transition-colors border border-terracotta-100"
+                    className="flex items-center gap-3 p-4 bg-brand-dark-teal/20 rounded-lg hover:bg-brand-vibrant-pink/20 transition-colors border border-brand-vibrant-pink/30"
                   >
-                    <FaEtsy className="text-terracotta-600 text-xl" />
-                    <span className="font-medium text-sage-700">Etsy Shop</span>
+                    <FaEtsy className="text-brand-vibrant-pink text-xl" />
+                    <span className="font-brand-bold text-brand-light-pink">Etsy Shop</span>
                   </a>
                 </div>
               </div>
 
               {/* FAQ */}
-              <div className="bg-white rounded-2xl p-8 border border-terracotta-100">
-                <h2 className="text-2xl font-serif text-terracotta-600 mb-6">
+              <div className="bg-brand-dark-teal/20 backdrop-blur-sm rounded-2xl p-8 border border-brand-vibrant-pink/20">
+                <h2 className="text-2xl font-brand-bold text-brand-light-pink mb-6">
                   Frequently Asked Questions
                 </h2>
                 
                 <div className="space-y-4">
                   <div>
-                    <h3 className="font-semibold text-sage-800 mb-2">
+                    <h3 className="font-brand-bold text-brand-light-pink mb-2">
                       Do you accept custom orders?
                     </h3>
-                    <p className="text-sage-600 text-sm">
+                    <p className="text-brand-light-pink/80 text-sm font-brand-elegant">
                       Yes! I love creating custom pieces. Please contact me with your ideas and I'll work with you to bring your vision to life.
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="font-semibold text-sage-800 mb-2">
+                    <h3 className="font-brand-bold text-brand-light-pink mb-2">
                       How long do custom orders take?
                     </h3>
-                    <p className="text-sage-600 text-sm">
+                    <p className="text-brand-light-pink/80 text-sm font-brand-elegant">
                       Custom orders typically take 2-4 weeks depending on complexity. I'll provide a timeline when we discuss your project.
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="font-semibold text-sage-800 mb-2">
+                    <h3 className="font-brand-bold text-brand-light-pink mb-2">
                       Do you ship internationally?
                     </h3>
-                    <p className="text-sage-600 text-sm">
+                    <p className="text-brand-light-pink/80 text-sm font-brand-elegant">
                       Yes, I ship worldwide through my Etsy shop. Shipping costs and delivery times vary by location.
                     </p>
                   </div>

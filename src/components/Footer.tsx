@@ -1,105 +1,89 @@
 'use client';
 
-import { FaInstagram, FaPinterest, FaLinkedin, FaEtsy } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import React from 'react';
+import Link from 'next/link';
+import { FaInstagram, FaBehance, FaLinkedinIn } from 'react-icons/fa';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const socialLinks = [
+    { href: "https://instagram.com", icon: FaInstagram },
+    { href: "https://behance.net", icon: FaBehance },
+    { href: "https://linkedin.com", icon: FaLinkedinIn },
+  ];
+
+  const navLinks = [
+    { href: "/work", label: "My Work" },
+    { href: "/about", label: "About Me" },
+    { href: "/shop", label: "Shop" },
+    { href: "/contact", label: "Contact" },
+  ];
 
   return (
-    <footer className="bg-dark-teal-50 border-t border-dark-teal-200 mt-auto">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Brand Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center md:text-left"
-          >
-            <h3 className="text-2xl font-handwritten text-vibrant-pink-600 mb-4">
-              Toska CR
+    <footer className="bg-[#0f2e1f] w-full">
+      <div className="w-full py-16" style={{ paddingLeft: '40px', paddingRight: '40px', paddingTop: '20px' }}>
+        <div className="flex flex-col md:flex-row justify-between items-center min-h-[120px]">
+          {/* Socials */}
+          <div className="text-left mb-8 md:mb-0">
+            <h3 
+              className="uppercase tracking-widest mb-6 font-sans"
+              style={{ 
+                fontSize: '30px',
+                color: '#FF8A9D',
+                fontWeight: '600'
+              }}
+            >
+              Socials
             </h3>
-            <p className="text-dark-teal-600 leading-relaxed">
-              Creating unique handcrafted ceramics and bags that tell stories of passion and creativity.
-            </p>
-          </motion.div>
-
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-center md:text-left"
-          >
-            <h4 className="text-lg font-serif text-dark-teal-800 mb-4">Quick Links</h4>
-            <div className="space-y-2">
-              {[
-                { href: '/about', label: 'About' },
-                { href: '/work', label: 'My Work' },
-                { href: '/shop', label: 'Shop' },
-                { href: '/contact', label: 'Contact' }
-              ].map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="block text-dark-teal-600 hover:text-vibrant-pink-600 transition-colors duration-300"
+            <div className="flex justify-center md:justify-start gap-6">
+              {socialLinks.map(({ href, icon: Icon }) => (
+                <a 
+                  key={href}
+                  href={href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="transition-colors"
+                  style={{ color: '#FF8A9D' }}
+                  aria-label={`Follow on ${href}`}
                 >
-                  {link.label}
+                  <Icon size={36} />
                 </a>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          {/* Social Media */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-center md:text-left"
-          >
-            <h4 className="text-lg font-serif text-dark-teal-800 mb-4">Follow Me</h4>
-            <div className="flex justify-center md:justify-start space-x-4">
-              {[
-                { href: 'https://instagram.com/toskacr', icon: FaInstagram, label: 'Instagram' },
-                { href: 'https://pinterest.com/toskacr', icon: FaPinterest, label: 'Pinterest' },
-                { href: 'https://linkedin.com/in/toskacr', icon: FaLinkedin, label: 'LinkedIn' },
-                { href: 'https://etsy.com/shop/toskacr', icon: FaEtsy, label: 'Etsy' }
-              ].map((social, index) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-dark-teal-600 hover:text-vibrant-pink-600 transition-colors duration-300 p-2 rounded-full hover:bg-vibrant-pink-50"
-                  aria-label={`Follow on ${social.label}`}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
-                  <social.icon size={20} />
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
+          {/* Navigation */}
+          <div className="text-right">
+            {navLinks.map(({ href, label }) => (
+              <Link 
+                key={href} 
+                href={href} 
+                className="block mb-3 transition-colors uppercase tracking-widest font-sans"
+                style={{ 
+                  fontSize: '30px',
+                  color: '#FF8A9D',
+                  fontWeight: '600'
+                }}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
         </div>
-
-        {/* Bottom Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="pt-8 border-t border-dark-teal-200 text-center"
+        
+        {/* Copyright */}
+        <div 
+          className="text-center border-t"
+          style={{ 
+            borderColor: '#FF8A9D',
+            color: '#FF8A9D',
+            fontSize: '25px',
+            paddingTop: '20px',
+            paddingBottom: '20px',
+            marginTop: '40px'
+          }}
         >
-          <p className="text-dark-teal-600 text-sm mb-2">
-            © {currentYear} Toska CR. All rights reserved.
-          </p>
-          <p className="text-dark-teal-500 text-xs italic">
-            Handcrafted with love and creativity
-          </p>
-        </motion.div>
+          ALL RIGHTS RESERVED © 2025 TOSKA ART PROJECT
+        </div>
       </div>
     </footer>
   );
