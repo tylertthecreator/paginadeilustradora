@@ -20,28 +20,24 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#0f2e1f] w-full">
-      <div className="w-full py-16" style={{ paddingLeft: '40px', paddingRight: '40px', paddingTop: '20px' }}>
-        <div className="flex flex-col md:flex-row justify-between items-center min-h-[120px]">
+      <div className="w-full py-20" style={{ paddingTop: '80px', paddingBottom: '80px', paddingLeft: '80px', paddingRight: '80px' }}>
+        <div className="flex flex-col md:flex-row justify-between items-center min-h-[160px]">
           {/* Socials */}
           <div className="text-left mb-8 md:mb-0">
             <h3 
-              className="uppercase tracking-widest mb-6 font-sans"
-              style={{ 
-                fontSize: '30px',
-                color: '#FF8A9D',
-                fontWeight: '600'
-              }}
+              className="font-mencken-bold uppercase tracking-widest text-2xl pb-5"
+              style={{ color: '#FF8A9D', fontSize: '25px', marginBottom: '20px' }}
             >
               Socials
             </h3>
-            <div className="flex justify-center md:justify-start gap-6">
+            <div className="flex justify-center md:justify-start gap-12">
               {socialLinks.map(({ href, icon: Icon }) => (
                 <a 
                   key={href}
                   href={href} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="transition-colors"
+                  className="transition-colors hover:opacity-80"
                   style={{ color: '#FF8A9D' }}
                   aria-label={`Follow on ${href}`}
                 >
@@ -57,12 +53,8 @@ export default function Footer() {
               <Link 
                 key={href} 
                 href={href} 
-                className="block mb-3 transition-colors uppercase tracking-widest font-sans"
-                style={{ 
-                  fontSize: '30px',
-                  color: '#FF8A9D',
-                  fontWeight: '600'
-                }}
+                className="font-mencken-bold block mb-1 transition-colors uppercase tracking-widest"
+                style={{ color: '#FF8A9D', fontSize: '25px' }}
               >
                 {label}
               </Link>
@@ -72,17 +64,10 @@ export default function Footer() {
         
         {/* Copyright */}
         <div 
-          className="text-center border-t"
-          style={{ 
-            borderColor: '#FF8A9D',
-            color: '#FF8A9D',
-            fontSize: '25px',
-            paddingTop: '20px',
-            paddingBottom: '20px',
-            marginTop: '40px'
-          }}
+          className="font-mencken-regular text-center pt-8 pb-8 mt-12"
+          style={{ color: '#FF8A9D', marginLeft: '80px', marginRight: '80px', fontSize: '25px' }}
         >
-          ALL RIGHTS RESERVED © 2025 TOSKA ART PROJECT
+          ALL RIGHTS RESERVED  &nbsp; © &nbsp; 2025 TOSKA ART PROJECT
         </div>
       </div>
     </footer>

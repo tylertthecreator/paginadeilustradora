@@ -1,26 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import PageTransition from "@/components/PageTransition";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
-
-const cormorantGaramond = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://toskacr.com'),
@@ -89,8 +72,47 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/jnj4pru.css?v=2" />
+        <link href="https://db.onlinewebfonts.com/c/ea90e636f79e82b61513ca71197744db?family=Temeraire+Display+Bk" rel="stylesheet" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Font debugging script
+              document.addEventListener('DOMContentLoaded', function() {
+                console.log('Checking font loading...');
+                document.fonts.ready.then(function() {
+                  console.log('Fonts loaded');
+                  
+                  // Check if specific fonts are available
+                  const testDiv = document.createElement('div');
+                  testDiv.style.position = 'absolute';
+                  testDiv.style.visibility = 'hidden';
+                  testDiv.textContent = 'Test';
+                  
+                  // Test Mencken
+                  testDiv.style.fontFamily = 'mencken-std, serif';
+                  document.body.appendChild(testDiv);
+                  const menckenStyle = window.getComputedStyle(testDiv);
+                  console.log('Mencken font computed style:', menckenStyle.fontFamily);
+                  
+                  // Test Temeraire
+                  testDiv.style.fontFamily = 'temeraire, serif';
+                  const temeraireStyle = window.getComputedStyle(testDiv);
+                  console.log('Temeraire font computed style:', temeraireStyle.fontFamily);
+                  
+                  document.body.removeChild(testDiv);
+                  
+                  // Check if fonts are actually loaded
+                  console.log('Available fonts:', Array.from(document.fonts).map(font => font.family));
+                });
+              });
+            `,
+          }}
+        />
+      </head>
       <body
-        className={`${inter.variable} ${playfairDisplay.variable} ${cormorantGaramond.variable} antialiased min-h-screen flex flex-col`}
+        className={`antialiased min-h-screen flex flex-col`}
       >
         <ErrorBoundary>
           <Header />

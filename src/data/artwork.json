@@ -1,83 +1,83 @@
 [
   {
     "id": 1,
-    "title": "Terracotta Vase",
+    "title": "Handcrafted Ceramic Piece",
     "category": "ceramics",
-    "image": "https://picsum.photos/seed/vase/400/400",
-    "alt": "A handcrafted terracotta vase",
-    "description": "A beautiful vase made from rich terracotta clay, perfect for holding your favorite flowers."
+    "image": "/images/gallery/IMG_2338.jpg",
+    "alt": "A beautiful handcrafted ceramic piece",
+    "description": "A unique ceramic creation showcasing Toska CR's artistic vision and craftsmanship."
   },
   {
     "id": 2,
-    "title": "Canvas Tote Bag",
-    "category": "bags",
-    "image": "https://picsum.photos/seed/tote/400/400",
-    "alt": "A stylish canvas tote bag",
-    "description": "A durable and stylish canvas tote bag, perfect for everyday use."
+    "title": "Artisan Ceramic Work",
+    "category": "ceramics",
+    "image": "/images/gallery/IMG_2343.jpg",
+    "alt": "An artisan ceramic work",
+    "description": "Handcrafted ceramic piece demonstrating skilled pottery techniques and artistic expression."
   },
   {
     "id": 3,
-    "title": "Glazed Bowl Set",
+    "title": "Ceramic Art Creation",
     "category": "ceramics",
-    "image": "https://picsum.photos/seed/bowls/400/400",
-    "alt": "A set of glazed ceramic bowls",
-    "description": "A set of three handcrafted ceramic bowls with a beautiful glaze finish."
+    "image": "/images/gallery/IMG_2353.jpg",
+    "alt": "A ceramic art creation",
+    "description": "An artistic ceramic piece that reflects the beauty of handmade craftsmanship."
   },
   {
     "id": 4,
-    "title": "Leather Crossbody",
-    "category": "bags",
-    "image": "https://picsum.photos/seed/crossbody/400/400",
-    "alt": "A leather crossbody bag",
-    "description": "A stylish and functional leather crossbody bag, perfect for a night out."
+    "title": "Handmade Ceramic Item",
+    "category": "ceramics",
+    "image": "/images/gallery/IMG_2392.jpg",
+    "alt": "A handmade ceramic item",
+    "description": "A carefully crafted ceramic piece that embodies the essence of artisanal work."
   },
   {
     "id": 5,
-    "title": "Earthenware Mug",
+    "title": "Ceramic Artwork",
     "category": "ceramics",
-    "image": "https://picsum.photos/seed/mug/400/400",
-    "alt": "A rustic earthenware mug",
-    "description": "A rustic earthenware mug, perfect for your morning coffee or tea."
+    "image": "/images/gallery/IMG_2477.jpg",
+    "alt": "A ceramic artwork",
+    "description": "A stunning ceramic artwork that showcases the artist's creative vision and technical skill."
   },
   {
     "id": 6,
-    "title": "Woven Backpack",
-    "category": "bags",
-    "image": "https://picsum.photos/seed/backpack/400/400",
-    "alt": "A woven backpack",
-    "description": "A beautiful and spacious woven backpack, perfect for your next adventure."
+    "title": "Handcrafted Pottery",
+    "category": "ceramics",
+    "image": "/images/gallery/IMG_2491.jpg",
+    "alt": "Handcrafted pottery piece",
+    "description": "A beautiful handcrafted pottery piece that represents the art of ceramic creation."
   },
   {
     "id": 7,
-    "title": "Ceramic Plate",
+    "title": "Ceramic Design",
     "category": "ceramics",
-    "image": "https://picsum.photos/seed/plate/400/400",
-    "alt": "A handcrafted ceramic plate",
-    "description": "A beautiful ceramic plate with intricate patterns, perfect for serving meals."
+    "image": "/images/gallery/IMG_2492.jpg",
+    "alt": "A ceramic design",
+    "description": "An elegant ceramic design that demonstrates the artist's attention to detail and form."
   },
   {
     "id": 8,
-    "title": "Leather Handbag",
-    "category": "bags",
-    "image": "https://picsum.photos/seed/handbag/400/400",
-    "alt": "A elegant leather handbag",
-    "description": "An elegant leather handbag, perfect for special occasions."
+    "title": "Artisan Pottery",
+    "category": "ceramics",
+    "image": "/images/gallery/IMG_2497.jpg",
+    "alt": "An artisan pottery piece",
+    "description": "A carefully crafted artisan pottery piece that reflects traditional techniques with modern aesthetics."
   },
   {
     "id": 9,
-    "title": "Pottery Jar",
+    "title": "Ceramic Craft",
     "category": "ceramics",
-    "image": "https://picsum.photos/seed/jar/400/400",
-    "alt": "A traditional pottery jar",
-    "description": "A traditional pottery jar with beautiful glazing, perfect for storage."
+    "image": "/images/gallery/IMG_2512.jpg",
+    "alt": "A ceramic craft piece",
+    "description": "A unique ceramic craft that showcases the beauty of handmade artistic expression."
   },
   {
     "id": 10,
-    "title": "Canvas Shoulder Bag",
-    "category": "bags",
-    "image": "https://picsum.photos/seed/shoulder/400/400",
-    "alt": "A comfortable canvas shoulder bag",
-    "description": "A comfortable canvas shoulder bag, perfect for daily use."
+    "title": "Handmade Ceramic",
+    "category": "ceramics",
+    "image": "/images/gallery/IMG_2526.jpg",
+    "alt": "A handmade ceramic piece",
+    "description": "A beautiful handmade ceramic piece that embodies the spirit of artisanal craftsmanship."
   },
   {
     "id": 11,

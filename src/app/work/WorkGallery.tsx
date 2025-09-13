@@ -28,7 +28,7 @@ export default function WorkGallery({ artwork }: WorkGalleryProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="mb-16"
+        className="mb-8"
       >
         <div className="flex flex-wrap justify-center gap-3">
           {[
@@ -61,7 +61,7 @@ export default function WorkGallery({ artwork }: WorkGalleryProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mb-8"
       >
         {displayedArtwork.map((item, index) => (
           <motion.div
@@ -148,7 +148,7 @@ export default function WorkGallery({ artwork }: WorkGalleryProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <button
             onClick={() => setShowAll(!showAll)}

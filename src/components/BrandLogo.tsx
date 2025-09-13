@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { FaShoppingBag } from 'react-icons/fa';
+import Image from 'next/image';
 
 interface BrandLogoProps {
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   showText?: boolean;
 }
 
@@ -12,24 +12,39 @@ export default function BrandLogo({ size = 'md', showText = true }: BrandLogoPro
   const sizeClasses = {
     sm: 'text-2xl',
     md: 'text-3xl',
-    lg: 'text-4xl'
+    lg: 'text-4xl',
+    xl: 'text-5xl',
+    '2xl': 'text-6xl'
   };
 
   const textSizeClasses = {
     sm: 'text-sm',
     md: 'text-base',
-    lg: 'text-lg'
+    lg: 'text-lg',
+    xl: 'text-xl',
+    '2xl': 'text-2xl'
+  };
+
+  const logoSize = {
+    sm: 40,
+    md: 48,
+    lg: 64,
+    xl: 80,
+    '2xl': 96
   };
 
   return (
     <div className="flex items-center gap-3">
-      {/* Logo Circle with T */}
+      {/* Actual Logo Image */}
       <div className="relative">
-        <div className={`${sizeClasses[size]} w-16 h-16 bg-brand-vibrant-pink rounded-full flex items-center justify-center shadow-lg`}>
-          <span className="font-brand-logo text-white font-bold">T</span>
-        </div>
-        {/* Decorative ring */}
-        <div className="absolute -inset-1 bg-gradient-to-r from-brand-vibrant-pink to-brand-light-pink rounded-full opacity-30"></div>
+        <Image
+          src="/images/logo/toska_logo.png"
+          alt="Toska CR Logo"
+          width={logoSize[size]}
+          height={logoSize[size]}
+          className="object-contain"
+          priority
+        />
       </div>
       
       {/* Brand Text */}
@@ -50,8 +65,14 @@ export default function BrandLogo({ size = 'md', showText = true }: BrandLogoPro
 // Shopping bag icon component for header
 export function ShoppingBagIcon() {
   return (
-    <div className="relative p-2 text-brand-primary-pink hover:text-white transition-colors duration-300">
-      <FaShoppingBag className="text-4xl" />
+    <div className="relative p-2 hover:opacity-80 transition-opacity duration-300">
+      <Image
+        src="/images/icons/shop_bag.png"
+        alt="Shopping Bag"
+        width={64}
+        height={64}
+        className="object-contain"
+      />
       {/* Optional notification dot */}
       <div className="absolute -top-1 -right-1 w-3 h-3 bg-brand-vibrant-pink rounded-full"></div>
     </div>

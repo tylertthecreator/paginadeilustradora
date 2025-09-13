@@ -32,7 +32,7 @@ export default function InteractiveCarousel({ artwork }: InteractiveCarouselProp
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const { current } = scrollContainerRef;
-      const scrollAmount = 320; // Fixed scroll amount (width of one item + gap)
+      const scrollAmount = 320; // Fixed scroll amount (width of one item)
       current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
     }
   };
@@ -45,19 +45,17 @@ export default function InteractiveCarousel({ artwork }: InteractiveCarouselProp
           e.stopPropagation();
           scroll('left');
         }}
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-50 p-3 transition-all opacity-100 hover:opacity-80 cursor-pointer" 
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-50 transition-all opacity-100 hover:opacity-80 cursor-pointer" 
         style={{ 
-          color: '#FF8A9D',
-          backgroundColor: 'rgba(0,0,0,0.1)',
-          borderRadius: '50%'
+          color: '#FF8A9D'
         }}
         aria-label="Scroll left"
       >
-        <FaArrowLeft size={32}/>
+        <FaArrowLeft size={48}/>
       </button>
       <div 
         ref={scrollContainerRef} 
-        className="flex gap-6 overflow-x-auto scroll-smooth py-4 scrollbar-hide"
+        className="flex gap-0 overflow-x-auto overflow-y-hidden scroll-smooth py-4 scrollbar-hide"
         style={{ 
           scrollbarWidth: 'none', 
           msOverflowStyle: 'none',
@@ -65,9 +63,9 @@ export default function InteractiveCarousel({ artwork }: InteractiveCarouselProp
         }}
       >
         {artwork.map((item, index) => (
-          <div key={item.id} className="flex-shrink-0 w-80 h-80">
-            <Link href={`/work/${item.id}`} className="group block">
-              <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div key={item.id} className="flex-shrink-0 w-80 h-80 flex items-center justify-center">
+            <Link href={`/work/${item.id}`} className="group block w-full h-full">
+              <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center">
                 <img
                   src={item.image}
                   alt={item.alt}
@@ -90,15 +88,13 @@ export default function InteractiveCarousel({ artwork }: InteractiveCarouselProp
           e.stopPropagation();
           scroll('right');
         }}
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-50 p-3 transition-all opacity-100 hover:opacity-80 cursor-pointer" 
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-50 transition-all opacity-100 hover:opacity-80 cursor-pointer" 
         style={{ 
-          color: '#FF8A9D',
-          backgroundColor: 'rgba(0,0,0,0.1)',
-          borderRadius: '50%'
+          color: '#FF8A9D'
         }}
         aria-label="Scroll right"
       >
-        <FaArrowRight size={32}/>
+        <FaArrowRight size={48}/>
       </button>
     </div>
   );

@@ -26,26 +26,26 @@ export default function Header() {
 
   return (
     <header className="bg-brand-dark-teal w-full sticky top-0 z-50">
-      <div className="w-full flex items-center justify-between h-24" style={{ paddingLeft: '40px', paddingRight: '40px' }}>
+      <div className="w-full flex items-center justify-between h-32" style={{ paddingLeft: '100px', paddingRight: '100px', paddingTop: '20px' }}>
         {/* Brand Logo */}
         <div className="flex-shrink-0">
           <Link href="/" onClick={closeMobileMenu}>
-            <BrandLogo size="lg" showText={false} />
+            <BrandLogo size="2xl" showText={false} />
           </Link>
         </div>
 
         {/* Desktop Navigation & Icons */}
-        <div className="hidden md:flex items-center gap-16">
+        <div className="hidden md:flex items-center gap-32">
           <nav className="flex items-center gap-16">
             {navigationItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="transition-colors uppercase tracking-widest"
+                className="font-brand-bold transition-colors uppercase tracking-widest"
                 style={{
                   color: '#FF8A9D',
-                  fontSize: '20px',
-                  fontWeight: 'bold',
+                  fontSize: '25px',
+                  fontWeight: 800,
                   paddingTop: '1rem',
                   paddingBottom: '1rem'
                 }}
@@ -99,7 +99,7 @@ export default function Header() {
                       <Link
                         href={item.href}
                         onClick={closeMobileMenu}
-                        className="block px-4 py-3 text-white hover:text-brand-vibrant-pink hover:bg-brand-vibrant-pink/20 transition-colors duration-300 text-lg uppercase tracking-widest font-semibold rounded-lg mx-2"
+                        className="block px-4 py-3 text-white hover:text-brand-vibrant-pink hover:bg-brand-vibrant-pink/20 transition-colors duration-300 text-lg uppercase tracking-widest font-brand-bold rounded-lg mx-2"
                       >
                         {item.label}
                       </Link>
@@ -116,7 +116,7 @@ export default function Header() {
                     <Link
                       href="/shop"
                       onClick={closeMobileMenu}
-                      className="flex items-center gap-3 text-white hover:text-brand-vibrant-pink hover:bg-brand-vibrant-pink/20 transition-colors duration-300 text-lg uppercase tracking-widest font-semibold rounded-lg p-3"
+                      className="flex items-center gap-3 text-white hover:text-brand-vibrant-pink hover:bg-brand-vibrant-pink/20 transition-colors duration-300 text-lg uppercase tracking-widest font-brand-bold rounded-lg p-3"
                     >
                       <FaShoppingBag className="text-xl" />
                       Shop

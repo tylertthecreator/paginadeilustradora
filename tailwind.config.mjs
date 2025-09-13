@@ -125,16 +125,17 @@ const config = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['Temeraire', 'Playfair Display', 'serif'],
-        'brand-heading': ['Mencken', 'serif'],
+        sans: ['system-ui', 'sans-serif'],
+        serif: ['mencken-std', 'serif'],
+        handwritten: ['temeraire', 'cursive'],
         mono: ['JetBrains Mono', 'monospace'],
-        handwritten: ['Kalam', 'cursive'],
-        // Brand fonts from logo identity
-        'brand-bold': ['Oswald', 'sans-serif'], // For "TOSKA" - bold, wide uppercase
-        'brand-condensed': ['Oswald', 'sans-serif'], // For "ART PROJECT" - condensed uppercase
-        'brand-elegant': ['Crimson Text', 'serif'], // For "illustration" - classic serif
-        'brand-logo': ['Playfair Display', 'serif'], // For stylized 't' - decorative serif
+        // Brand-specific font families based on reference - using exact Typekit names
+        'brand-heading': ['Temeraire Display Bk', 'serif'], // Temeraire Display Bk for large headings
+        'brand-bold': ['mencken-std', 'serif'], // Mencken Std Bold for navigation and footer
+        'brand-regular': ['mencken-std', 'serif'], // Mencken Std Regular for body text
+        'brand-elegant': ['temeraire', 'serif'], // Temeraire for elegant text
+        'brand-condensed': ['mencken-std', 'serif'],
+        'brand-logo': ['mencken-std', 'serif'],
       },
       spacing: {
         '18': '4.5rem',
