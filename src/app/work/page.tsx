@@ -118,12 +118,12 @@ export default function WorkPage() {
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-24">
           {[
-            "/images/work/macrame/Toska-128.jpg",
-            "/images/work/macrame/Toska-130.jpg",
-            "/images/work/macrame/Toska-146.jpg",
-            "/images/work/macrame/Toska-157.jpg",
-            "/images/work/macrame/Toska-167.jpg",
-            "/images/work/macrame/Toska-170.jpg"
+            "/images/work/macrame/Toska-128 copy.jpg",
+            "/images/work/macrame/Toska-130 copy.jpg",
+            "/images/work/macrame/Toska-146 copy.jpg",
+            "/images/work/macrame/Toska-157 copy.jpg",
+            "/images/work/macrame/Toska-167 copy.jpg",
+            "/images/work/macrame/Toska-170 copy.jpg"
           ].map((imagePath, index) => (
             <motion.div
               key={index}
