@@ -2,6 +2,7 @@
 
 import React, { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 interface ArtworkItem {
@@ -66,11 +67,13 @@ export default function InteractiveCarousel({ artwork }: InteractiveCarouselProp
           <div key={item.id} className="flex-shrink-0 w-80 h-80 flex items-center justify-center">
             <Link href={`/work/${item.id}`} className="group block w-full h-full">
               <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center">
-                <img
+                <Image
                   src={item.image}
                   alt={item.alt}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  loading="lazy"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={index < 3}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-lg"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
