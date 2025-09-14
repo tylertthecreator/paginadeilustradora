@@ -246,7 +246,7 @@ export default function ContactPage() {
             className="relative rounded-2xl overflow-hidden md:col-span-2 aspect-square"
           >
             <Image
-              src="https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_600,h_600,c_fill/toska-cr/contact/get_in_touch.jpg"
+              src="https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_600,h_600,c_fit/toska-cr/contact/get_in_touch.jpg"
               alt="Get in Touch - Contact Toska CR"
               fill
               className="object-cover"

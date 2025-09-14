@@ -18,7 +18,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <Image
-              src="https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_600,h_600,c_fill/toska-cr/about/about_me.jpg"
+              src="https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_600,h_600,c_fit/toska-cr/about/about_me.jpg"
               alt="Gloriana - Graphic Designer and Illustrator"
               fill
               className="object-cover"
