@@ -38,7 +38,7 @@ export default function BrandLogo({ size = 'md', showText = true }: BrandLogoPro
       {/* Actual Logo Image */}
       <div className="relative">
         <Image
-          src="/images/logo/toska_logo.png"
+          src="https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_100,h_100,c_fill/toska-cr/icons/toska_logo.png"
           alt="Toska CR Logo"
           width={logoSize[size]}
           height={logoSize[size]}
@@ -67,7 +67,7 @@ export function ShoppingBagIcon() {
   return (
     <div className="relative p-2 hover:opacity-80 transition-opacity duration-300">
       <Image
-        src="/images/icons/shop_bag.png"
+        src="https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_100,h_100,c_fill/toska-cr/icons/shop_bag.png"
         alt="Shopping Bag"
         width={64}
         height={64}

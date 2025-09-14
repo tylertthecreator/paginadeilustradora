@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Handcrafted Ceramic Piece",
     "category": "ceramics",
-    "image": "/images/gallery/IMG_2338.jpg",
+    "image": "https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_800,h_600,c_fill/toska-cr/gallery/IMG_2338.jpg",
     "alt": "A beautiful handcrafted ceramic piece",
     "description": "A unique ceramic creation showcasing Toska CR's artistic vision and craftsmanship."
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "title": "Artisan Ceramic Work",
     "category": "ceramics",
-    "image": "/images/gallery/IMG_2343.jpg",
+    "image": "https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_800,h_600,c_fill/toska-cr/gallery/IMG_2343.jpg",
     "alt": "An artisan ceramic work",
     "description": "Handcrafted ceramic piece demonstrating skilled pottery techniques and artistic expression."
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "title": "Ceramic Art Creation",
     "category": "ceramics",
-    "image": "/images/gallery/IMG_2353.jpg",
+    "image": "https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_800,h_600,c_fill/toska-cr/gallery/IMG_2353.jpg",
     "alt": "A ceramic art creation",
     "description": "An artistic ceramic piece that reflects the beauty of handmade craftsmanship."
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "title": "Handmade Ceramic Item",
     "category": "ceramics",
-    "image": "/images/gallery/IMG_2392.jpg",
+    "image": "https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_800,h_600,c_fill/toska-cr/gallery/IMG_2392.jpg",
     "alt": "A handmade ceramic item",
     "description": "A carefully crafted ceramic piece that embodies the essence of artisanal work."
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "title": "Ceramic Artwork",
     "category": "ceramics",
-    "image": "/images/gallery/IMG_2477.jpg",
+    "image": "https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_800,h_600,c_fill/toska-cr/gallery/IMG_2477.jpg",
     "alt": "A ceramic artwork",
     "description": "A stunning ceramic artwork that showcases the artist's creative vision and technical skill."
   },
@@ -43,7 +43,7 @@
     "id": 6,
     "title": "Handcrafted Pottery",
     "category": "ceramics",
-    "image": "/images/gallery/IMG_2491.jpg",
+    "image": "https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_800,h_600,c_fill/toska-cr/gallery/IMG_2491.jpg",
     "alt": "Handcrafted pottery piece",
     "description": "A beautiful handcrafted pottery piece that represents the art of ceramic creation."
   },
@@ -51,7 +51,7 @@
     "id": 7,
     "title": "Ceramic Design",
     "category": "ceramics",
-    "image": "/images/gallery/IMG_2492.jpg",
+    "image": "https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_800,h_600,c_fill/toska-cr/gallery/IMG_2492.jpg",
     "alt": "A ceramic design",
     "description": "An elegant ceramic design that demonstrates the artist's attention to detail and form."
   },
@@ -59,7 +59,7 @@
     "id": 8,
     "title": "Artisan Pottery",
     "category": "ceramics",
-    "image": "/images/gallery/IMG_2497.jpg",
+    "image": "https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_800,h_600,c_fill/toska-cr/gallery/IMG_2497.jpg",
     "alt": "An artisan pottery piece",
     "description": "A carefully crafted artisan pottery piece that reflects traditional techniques with modern aesthetics."
   },
@@ -67,7 +67,7 @@
     "id": 9,
     "title": "Ceramic Craft",
     "category": "ceramics",
-    "image": "/images/gallery/IMG_2512.jpg",
+    "image": "https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_800,h_600,c_fill/toska-cr/gallery/IMG_2512.jpg",
     "alt": "A ceramic craft piece",
     "description": "A unique ceramic craft that showcases the beauty of handmade artistic expression."
   },
@@ -75,7 +75,7 @@
     "id": 10,
     "title": "Handmade Ceramic",
     "category": "ceramics",
-    "image": "/images/gallery/IMG_2526.jpg",
+    "image": "https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_800,h_600,c_fill/toska-cr/gallery/IMG_2526.jpg",
     "alt": "A handmade ceramic piece",
     "description": "A beautiful handmade ceramic piece that embodies the spirit of artisanal craftsmanship."
   },
