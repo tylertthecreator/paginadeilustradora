@@ -77,41 +77,6 @@ export default function RootLayout({
         <GoogleAnalytics measurementId={analyticsConfig.measurementId} />
         <link rel="stylesheet" href="https://use.typekit.net/jnj4pru.css?v=2" />
         <link href="https://db.onlinewebfonts.com/c/ea90e636f79e82b61513ca71197744db?family=Temeraire+Display+Bk" rel="stylesheet" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Font debugging script
-              document.addEventListener('DOMContentLoaded', function() {
-                console.log('Checking font loading...');
-                document.fonts.ready.then(function() {
-                  console.log('Fonts loaded');
-                  
-                  // Check if specific fonts are available
-                  const testDiv = document.createElement('div');
-                  testDiv.style.position = 'absolute';
-                  testDiv.style.visibility = 'hidden';
-                  testDiv.textContent = 'Test';
-                  
-                  // Test Mencken
-                  testDiv.style.fontFamily = 'mencken-std, serif';
-                  document.body.appendChild(testDiv);
-                  const menckenStyle = window.getComputedStyle(testDiv);
-                  console.log('Mencken font computed style:', menckenStyle.fontFamily);
-                  
-                  // Test Temeraire
-                  testDiv.style.fontFamily = 'temeraire, serif';
-                  const temeraireStyle = window.getComputedStyle(testDiv);
-                  console.log('Temeraire font computed style:', temeraireStyle.fontFamily);
-                  
-                  document.body.removeChild(testDiv);
-                  
-                  // Check if fonts are actually loaded
-                  console.log('Available fonts:', Array.from(document.fonts).map(font => font.family));
-                });
-              });
-            `,
-          }}
-        />
       </head>
       <body
         className={`antialiased min-h-screen flex flex-col`}
