@@ -6,9 +6,9 @@ import { FaInstagram, FaBehance, FaLinkedinIn } from 'react-icons/fa';
 
 export default function Footer() {
   const socialLinks = [
-    { href: "https://instagram.com", icon: FaInstagram },
-    { href: "https://behance.net", icon: FaBehance },
-    { href: "https://linkedin.com", icon: FaLinkedinIn },
+    { href: "https://www.instagram.com/toska_cr/?hl=en", icon: FaInstagram },
+    { href: "https://www.behance.net/GlorianaSanabria", icon: FaBehance },
+    { href: "https://www.linkedin.com/in/gloriana-sanabria-chac%C3%B3n/", icon: FaLinkedinIn },
   ];
 
   const navLinks = [
@@ -39,7 +39,7 @@ export default function Footer() {
                   rel="noopener noreferrer" 
                   className="transition-colors hover:opacity-80"
                   style={{ color: '#FF8A9D' }}
-                  aria-label={`Follow on ${href}`}
+                  aria-label={`Follow Toska CR on ${href.includes('instagram') ? 'Instagram' : href.includes('behance') ? 'Behance' : 'LinkedIn'}`}
                 >
                   <Icon size={36} />
                 </a>
