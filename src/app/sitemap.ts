@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
+import { seoConfig } from '@/lib/seo-config'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://toskacr.com'
+  const baseUrl = seoConfig.site.url
   
   return [
     {

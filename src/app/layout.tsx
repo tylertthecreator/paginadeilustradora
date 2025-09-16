@@ -4,22 +4,20 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import PageTransition from "@/components/PageTransition";
+import StructuredData from "@/components/StructuredData";
+import { seoConfig } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://toskacr.com'),
+  metadataBase: new URL(seoConfig.site.url),
   title: {
-    default: "Toska CR - Handcrafted Ceramics & Artisan Bags",
-    template: "%s | Toska CR"
+    default: seoConfig.site.title,
+    template: `%s | ${seoConfig.site.name}`
   },
-  description: "Discover unique handcrafted ceramics and artisan bags by Toska CR. Each piece tells a story of passion, creativity, and sustainable craftsmanship. Shop handmade pottery, leather bags, and custom pieces.",
-  keywords: [
-    "handcrafted ceramics", "artisan bags", "handmade pottery", "leather handbags", 
-    "custom ceramics", "sustainable art", "handmade gifts", "pottery studio", 
-    "artisan crafts", "unique ceramics", "handmade bags", "creative portfolio"
-  ],
-  authors: [{ name: "Toska CR", url: "https://toskacr.com" }],
-  creator: "Toska CR",
-  publisher: "Toska CR",
+  description: seoConfig.site.description,
+  keywords: seoConfig.site.keywords,
+  authors: [{ name: seoConfig.site.author, url: seoConfig.site.url }],
+  creator: seoConfig.site.author,
+  publisher: seoConfig.site.author,
   robots: {
     index: true,
     follow: true,
@@ -34,28 +32,28 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://toskacr.com",
-    siteName: "Toska CR",
-    title: "Toska CR - Handcrafted Ceramics & Artisan Bags",
-    description: "Discover unique handcrafted ceramics and artisan bags by Toska CR. Each piece tells a story of passion, creativity, and sustainable craftsmanship.",
+    url: seoConfig.site.url,
+    siteName: seoConfig.site.name,
+    title: seoConfig.site.title,
+    description: seoConfig.site.description,
     images: [
       {
-        url: "/og-image.jpg",
+        url: seoConfig.site.image,
         width: 1200,
         height: 630,
-        alt: "Toska CR - Handcrafted Ceramics & Artisan Bags",
+        alt: seoConfig.site.title,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Toska CR - Handcrafted Ceramics & Artisan Bags",
-    description: "Discover unique handcrafted ceramics and artisan bags by Toska CR. Each piece tells a story of passion, creativity, and sustainable craftsmanship.",
-    images: ["/og-image.jpg"],
-    creator: "@toskacr",
+    title: seoConfig.site.title,
+    description: seoConfig.site.description,
+    images: [seoConfig.site.image],
+    creator: seoConfig.social.twitter,
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "your-google-verification-code", // Will be updated when Google Search Console is set up
   },
 };
 
@@ -73,6 +71,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <StructuredData type="website" />
         <link rel="stylesheet" href="https://use.typekit.net/jnj4pru.css?v=2" />
         <link href="https://db.onlinewebfonts.com/c/ea90e636f79e82b61513ca71197744db?family=Temeraire+Display+Bk" rel="stylesheet" />
         <script

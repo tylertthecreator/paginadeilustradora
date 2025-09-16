@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
+import { generatePageMetadata } from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title: "Portfolio - Handcrafted Ceramics & Artisan Bags",
-  description: "Explore Toska CR's portfolio of handcrafted ceramics and artisan bags. Each piece showcases unique design, sustainable craftsmanship, and artistic excellence.",
-  openGraph: {
-    title: "Portfolio - Handcrafted Ceramics & Artisan Bags",
-    description: "Explore Toska CR's portfolio of handcrafted ceramics and artisan bags. Each piece showcases unique design and sustainable craftsmanship.",
-  },
-};
+export const metadata: Metadata = generatePageMetadata('work');
 
 export default function WorkLayout({
   children,
