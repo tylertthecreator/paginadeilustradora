@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaInstagram, FaBehance, FaLinkedinIn } from 'react-icons/fa';
+import { trackEvent, analyticsConfig } from '@/lib/analytics';
 
 export default function Footer() {
   const socialLinks = [
@@ -31,19 +32,33 @@ export default function Footer() {
               Socials
             </h3>
             <div className="flex justify-center md:justify-start gap-12">
-              {socialLinks.map(({ href, icon: Icon }) => (
-                <a 
-                  key={href}
-                  href={href} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="transition-colors hover:opacity-80"
-                  style={{ color: '#FF8A9D' }}
-                  aria-label={`Follow Toska CR on ${href.includes('instagram') ? 'Instagram' : href.includes('behance') ? 'Behance' : 'LinkedIn'}`}
-                >
-                  <Icon size={36} />
-                </a>
-              ))}
+              {socialLinks.map(({ href, icon: Icon }) => {
+                const platform = href.includes('instagram') ? 'Instagram' : href.includes('behance') ? 'Behance' : 'LinkedIn';
+                const eventName = href.includes('instagram') ? analyticsConfig.events.INSTAGRAM_CLICK : 
+                                 href.includes('behance') ? analyticsConfig.events.BEHANCE_CLICK : 
+                                 analyticsConfig.events.LINKEDIN_CLICK;
+                
+                return (
+                  <a 
+                    key={href}
+                    href={href} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="transition-colors hover:opacity-80"
+                    style={{ color: '#FF8A9D' }}
+                    aria-label={`Follow Toska CR on ${platform}`}
+                    onClick={() => {
+                      trackEvent(eventName, {
+                        platform: platform.toLowerCase(),
+                        link_url: href,
+                        page_location: window.location.href,
+                      });
+                    }}
+                  >
+                    <Icon size={36} />
+                  </a>
+                );
+              })}
             </div>
           </div>
 

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FaSpinner, FaCheck } from "react-icons/fa";
 import { useState } from "react";
 import Image from "next/image";
+import { trackEvent, trackConversion, analyticsConfig } from "@/lib/analytics";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -29,6 +30,12 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
+    // Track form start
+    trackEvent(analyticsConfig.events.CONTACT_FORM_START, {
+      form_name: 'contact_form',
+      page_location: window.location.href,
+    });
+
     try {
       const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
@@ -47,12 +54,35 @@ export default function ContactPage() {
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ firstName: '', surname: '', email: '', subject: '', message: '' });
+        
+        // Track successful form submission
+        trackEvent(analyticsConfig.events.CONTACT_FORM_SUCCESS, {
+          form_name: 'contact_form',
+          page_location: window.location.href,
+        });
+        
+        // Track conversion
+        trackConversion(analyticsConfig.conversions.CONTACT_FORM_SUBMISSION);
       } else {
         setSubmitStatus('error');
+        
+        // Track form error
+        trackEvent(analyticsConfig.events.CONTACT_FORM_ERROR, {
+          form_name: 'contact_form',
+          error_type: 'server_error',
+          page_location: window.location.href,
+        });
       }
     } catch (error) {
       console.error('Formspree Error:', error);
       setSubmitStatus('error');
+      
+      // Track form error
+      trackEvent(analyticsConfig.events.CONTACT_FORM_ERROR, {
+        form_name: 'contact_form',
+        error_type: 'network_error',
+        page_location: window.location.href,
+      });
     } finally {
       setIsSubmitting(false);
     }

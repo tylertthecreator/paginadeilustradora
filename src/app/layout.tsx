@@ -5,7 +5,9 @@ import Footer from "@/components/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import PageTransition from "@/components/PageTransition";
 import StructuredData from "@/components/StructuredData";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { seoConfig } from "@/lib/seo-config";
+import { analyticsConfig } from "@/lib/analytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL(seoConfig.site.url),
@@ -72,6 +74,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <StructuredData type="website" />
+        <GoogleAnalytics measurementId={analyticsConfig.measurementId} />
         <link rel="stylesheet" href="https://use.typekit.net/jnj4pru.css?v=2" />
         <link href="https://db.onlinewebfonts.com/c/ea90e636f79e82b61513ca71197744db?family=Temeraire+Display+Bk" rel="stylesheet" />
         <script
