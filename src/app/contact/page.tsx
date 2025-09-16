@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FaSpinner, FaCheck } from "react-icons/fa";
-import { useState, useEffect } from "react";
-import emailjs from '@emailjs/browser';
+import { useState } from "react";
 import Image from "next/image";
 
 export default function ContactPage() {
@@ -16,10 +15,6 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
-  useEffect(() => {
-    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'your_public_key');
-  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -35,26 +30,28 @@ export default function ContactPage() {
     setSubmitStatus('idle');
 
     try {
-      const result = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'your_service_id',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'your_template_id',
-        {
-          from_name: `${formData.firstName} ${formData.surname}`,
-          from_email: formData.email,
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.surname}`,
+          email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_name: 'Toska CR'
-        }
-      );
+          _replyto: formData.email,
+        }),
+      });
 
-      if (result.status === 200) {
+      if (response.ok) {
         setSubmitStatus('success');
         setFormData({ firstName: '', surname: '', email: '', subject: '', message: '' });
       } else {
         setSubmitStatus('error');
       }
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('Formspree Error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

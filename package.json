@@ -10,7 +10,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "cloudinary": "^2.7.0",
     "dotenv": "^17.2.2",
     "framer-motion": "^12.23.12",
