@@ -18,7 +18,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <CloudinaryImage
-              publicId="toska-cr/about/about_me"
+              publicId="toska-cr/about/about_me.jpg"
               alt="Gloriana - Graphic Designer and Illustrator"
               width={600}
               height={600}
