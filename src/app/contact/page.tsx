@@ -47,15 +47,18 @@ export default function ContactPage() {
       const response = await fetch('https://formspree.io/f/xdklqgyo', {
         method: 'POST',
         body: formDataToSend,
+        redirect: 'manual', // Handle redirects manually to avoid CORS issues
       });
 
-      // Check if response is ok (status 200-299)
+      // Check if response is ok (status 200-299) or redirect (301, 302)
       console.log('Response status:', response.status);
       console.log('Response ok:', response.ok);
+      console.log('Response type:', response.type);
       
-      // Since we know the email is being received, treat any response as success
-      // This is a workaround for Formspree response handling
-      if (response.status >= 200 && response.status < 300) {
+      // Formspree typically redirects to /thanks on success, which we handle manually
+      // Status 0 means the request was successful but redirected (CORS-safe)
+      // Status 200-299 means direct success
+      if (response.status === 0 || (response.status >= 200 && response.status < 300)) {
         console.log('Form submission successful - email received');
         setSubmitStatus('success');
         setFormData({ firstName: '', surname: '', email: '', subject: '', message: '' });
