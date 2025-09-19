@@ -50,13 +50,13 @@ export default function ContactPage() {
       });
 
       // Check if response is ok (status 200-299)
-      if (response.ok) {
-        // Also check the response content to be sure
-        const responseData = await response.text();
-        console.log('Formspree response:', responseData);
-        
-        // Formspree typically returns {"next":"/thanks","ok":true} for success
-        // or just a redirect response, so we consider any 200 response as success
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+      
+      // Since we know the email is being received, treat any response as success
+      // This is a workaround for Formspree response handling
+      if (response.status >= 200 && response.status < 300) {
+        console.log('Form submission successful - email received');
         setSubmitStatus('success');
         setFormData({ firstName: '', surname: '', email: '', subject: '', message: '' });
         
