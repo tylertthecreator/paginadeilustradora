@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import CloudinaryImage from "@/components/CloudinaryImage";
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -17,10 +17,11 @@ export default function AboutPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Image
-              src="https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_600,h_600,c_fit,dpr_auto,fl_progressive/toska-cr/about/about_me.jpg"
+            <CloudinaryImage
+              publicId="toska-cr/about/about_me"
               alt="Gloriana - Graphic Designer and Illustrator"
-              fill
+              width={600}
+              height={600}
               className="object-cover"
               priority
             />

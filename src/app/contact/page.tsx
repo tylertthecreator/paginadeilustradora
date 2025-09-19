@@ -37,21 +37,26 @@ export default function ContactPage() {
     });
 
     try {
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', `${formData.firstName} ${formData.surname}`);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('_replyto', formData.email);
+
+      const response = await fetch('https://formspree.io/f/xdklqgyo', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: `${formData.firstName} ${formData.surname}`,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          _replyto: formData.email,
-        }),
+        body: formDataToSend,
       });
 
+      // Check if response is ok (status 200-299)
       if (response.ok) {
+        // Also check the response content to be sure
+        const responseData = await response.text();
+        console.log('Formspree response:', responseData);
+        
+        // Formspree typically returns {"next":"/thanks","ok":true} for success
+        // or just a redirect response, so we consider any 200 response as success
         setSubmitStatus('success');
         setFormData({ firstName: '', surname: '', email: '', subject: '', message: '' });
         
@@ -64,6 +69,7 @@ export default function ContactPage() {
         // Track conversion
         trackConversion(analyticsConfig.conversions.CONTACT_FORM_SUBMISSION);
       } else {
+        console.error('Formspree error response:', response.status, response.statusText);
         setSubmitStatus('error');
         
         // Track form error
