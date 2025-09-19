@@ -1,15 +1,9 @@
-import { v2 as cloudinary } from 'cloudinary';
+// Client-side Cloudinary utilities
+// This avoids the fs module issue by not importing the full Cloudinary SDK
 
-// Configure Cloudinary
-cloudinary.config({
-  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-});
+const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || 'dxpdn6xgr';
 
-export default cloudinary;
-
-// Helper function to get optimized image URL
+// Helper function to build Cloudinary URL manually
 export function getCloudinaryImageUrl(
   publicId: string,
   transformations: Record<string, any> = {}
@@ -20,7 +14,12 @@ export function getCloudinaryImageUrl(
     ...transformations,
   };
 
-  return cloudinary.url(publicId, defaultTransformations);
+  // Build transformation string
+  const transformString = Object.entries(defaultTransformations)
+    .map(([key, value]) => `${key}_${value}`)
+    .join(',');
+
+  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${transformString}/${publicId}`;
 }
 
 // Helper function for responsive images
@@ -29,11 +28,16 @@ export function getResponsiveImageUrl(
   width: number,
   height?: number
 ) {
-  return cloudinary.url(publicId, {
+  const transformations: Record<string, any> = {
     width,
-    height,
     crop: 'fill',
     quality: 'auto',
     fetch_format: 'auto',
-  });
+  };
+
+  if (height) {
+    transformations.height = height;
+  }
+
+  return getCloudinaryImageUrl(publicId, transformations);
 }

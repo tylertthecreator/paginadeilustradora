@@ -1,32 +1,14 @@
 require('dotenv').config({ path: '.env.local' });
-const cloudinary = require('cloudinary').v2;
 const fs = require('fs');
 const path = require('path');
 
-// Configure Cloudinary
-cloudinary.config({
-  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-});
+// Note: This script requires the cloudinary package to be installed separately
+// Run: npm install cloudinary (only for this script, not for the main app)
 
-// Image upload function
-async function uploadImage(filePath, publicId) {
-  try {
-    const result = await cloudinary.uploader.upload(filePath, {
-      public_id: publicId,
-      folder: 'toska-cr',
-      resource_type: 'auto',
-      quality: 'auto',
-      fetch_format: 'auto'
-    });
-    console.log(`✅ Uploaded: ${publicId} - ${result.secure_url}`);
-    return result.secure_url;
-  } catch (error) {
-    console.error(`❌ Error uploading ${publicId}:`, error.message);
-    return null;
-  }
-}
+console.log('⚠️  This script requires the cloudinary package to be installed separately.');
+console.log('Run: npm install cloudinary (only for this script)');
+console.log('Then run this script again.');
+process.exit(1);
 
 // Main upload function
 async function uploadAllImages() {
