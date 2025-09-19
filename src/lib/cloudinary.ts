@@ -14,9 +14,20 @@ export function getCloudinaryImageUrl(
     ...transformations,
   };
 
-  // Build transformation string
+  // Build transformation string with proper Cloudinary format
   const transformString = Object.entries(defaultTransformations)
-    .map(([key, value]) => `${key}_${value}`)
+    .map(([key, value]) => {
+      // Map our keys to Cloudinary's short format
+      const keyMap = {
+        'quality': 'q',
+        'fetch_format': 'f',
+        'width': 'w',
+        'height': 'h',
+        'crop': 'c'
+      };
+      const shortKey = keyMap[key] || key;
+      return `${shortKey}_${value}`;
+    })
     .join(',');
 
   return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${transformString}/${publicId}`;
