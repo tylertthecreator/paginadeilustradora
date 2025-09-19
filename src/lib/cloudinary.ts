@@ -18,7 +18,7 @@ export function getCloudinaryImageUrl(
   const transformString = Object.entries(defaultTransformations)
     .map(([key, value]) => {
       // Map our keys to Cloudinary's short format
-      const keyMap = {
+      const keyMap: Record<string, string> = {
         'quality': 'q',
         'fetch_format': 'f',
         'width': 'w',
