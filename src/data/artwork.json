@@ -78,21 +78,5 @@
     "image": "https://res.cloudinary.com/dxpdn6xgr/image/upload/f_auto,q_auto,w_800,h_600,c_fit,dpr_auto,fl_progressive/toska-cr/gallery/IMG_2526.jpg",
     "alt": "A handmade ceramic piece",
     "description": "A beautiful handmade ceramic piece that embodies the spirit of artisanal craftsmanship."
-  },
-  {
-    "id": 11,
-    "title": "Ceramic Teapot",
-    "category": "ceramics",
-    "image": "https://picsum.photos/seed/teapot/400/400",
-    "alt": "A delicate ceramic teapot",
-    "description": "A delicate ceramic teapot with beautiful craftsmanship."
-  },
-  {
-    "id": 12,
-    "title": "Leather Wallet",
-    "category": "bags",
-    "image": "https://picsum.photos/seed/wallet/400/400",
-    "alt": "A premium leather wallet",
-    "description": "A premium leather wallet with excellent craftsmanship."
   }
 ]
